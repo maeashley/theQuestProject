@@ -10,7 +10,7 @@ import byui.cit260.questGame.model.Riddle;
 
 /**
  *
- * @author Morley
+ * @author MMorley
  */
 public class TheQuest {
 
