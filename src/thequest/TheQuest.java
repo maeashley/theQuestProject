@@ -70,8 +70,13 @@ public class TheQuest {
         System.out.println(start);
         
         //test Backpack
+        Backpack backpack = new Backpack();
         
+        backpack.setGuesses(2);
+        backpack.setTokenHints(5);
         
+        System.out.println(backpack.toString() );
+     
     }
     
 }
