@@ -5,7 +5,9 @@
  */
 
 package byui.cit260.questGame.model;
-
+import byui.cit260.questGame.model.Player;
+import byui.cit260.questGame.model.Map;
+import byui.cit260.questGame.model.Backpack;
 import java.io.Serializable;
 /**
  *
@@ -13,9 +15,37 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
     private int noPeople;
-
+    
+    private Player player;
+    private Map map;
+    private Backpack backpack;
+    
     public Game(int noPeople) {
         this.noPeople = noPeople;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public Backpack getBackpack() {
+        return backpack;
+    }
+
+    public void setBackpack(Backpack backpack) {
+        this.backpack = backpack;
     }
 
     @Override
