@@ -5,9 +5,6 @@
  */
 
 package byui.cit260.questGame.model;
-import byui.cit260.questGame.model.Player;
-import byui.cit260.questGame.model.Map;
-import byui.cit260.questGame.model.Backpack;
 import java.io.Serializable;
 /**
  *
