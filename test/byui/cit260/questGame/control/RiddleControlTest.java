@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author caleb
+ * @author ashley
  */
 public class RiddleControlTest {
     
@@ -58,6 +58,57 @@ public class RiddleControlTest {
         expResult = 5432F;
         result = instance.calcTemperature(celsius);
         assertEquals(expResult, result, 0.0);
+    }
+
+    /**
+     * Test of calcDensity method, of class RiddleControl.
+     */
+    @Test
+    public void testCalcDensity() {
+        System.out.println("calcDensity");
+        float mass = 25F;
+        float volume = 1.5F;
+        RiddleControl instance = new RiddleControl();
+        float expResult = 16.6F;
+        float result = instance.calcDensity(mass, volume);
+        assertEquals(expResult, result, 0.1);
+        
+        //test 2
+        mass = 0F;
+        volume = 2.3F;
+        expResult = -1F;
+        result = instance.calcDensity(mass, volume);
+        assertEquals(expResult, result, 0.0);
+        
+        //test 3
+        mass = -50F;
+        volume = 8F;
+        expResult = -1F;
+        result = instance.calcDensity(mass, volume);
+        assertEquals(expResult, result, 0.0);
+        
+        //test 4
+        mass = 100F;
+        volume = 0F;
+        expResult = -1F;
+        result = instance.calcDensity(mass, volume);
+        assertEquals(expResult, result, 0.0);
+        
+        //test 5
+        mass = .01F;
+        volume = 0.1F;
+        expResult = 0.1F;
+        result = instance.calcDensity(mass, volume);
+        assertEquals(expResult, result, 0.1);
+        
+       //test 6
+        mass = 5000F;
+        volume = 25F;
+        expResult = 200F;
+        result = instance.calcDensity(mass, volume);
+        assertEquals(expResult, result, 0.0);
+        
+        
     }
     
 }
