@@ -33,4 +33,11 @@ public class RiddleControl {
         return density;
     
     }
+    
+    public float calcSide(float side1, float side2)
+    {
+        return 0;
+    }
+    
+    
 }
