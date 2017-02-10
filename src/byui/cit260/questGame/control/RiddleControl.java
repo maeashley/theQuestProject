@@ -17,6 +17,20 @@ public class RiddleControl {
         
         float temperature = (float)(celsius * 9.0/5.0+ 32.0);
         return temperature;
+       
     }
     
+    public float calcDensity(float mass, float volume)
+    {
+        if (mass <=0 || mass >5000){
+            return -1;
+        }
+        if (volume<=0 || volume>25) {
+            return -1;
+        }
+        
+        float density= (float) (mass/volume);
+        return density;
+    
+    }
 }

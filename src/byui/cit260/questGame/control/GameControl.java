@@ -7,7 +7,7 @@ package byui.cit260.questGame.control;
 
 /**
  *
- * @author caleb
+ * @author ashley
  */
 public class GameControl {
     
