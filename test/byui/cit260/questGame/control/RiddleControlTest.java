@@ -110,5 +110,55 @@ public class RiddleControlTest {
         
         
     }
+
+    /**
+     * Test of calcSide method, of class RiddleControl.
+     */
+    @Test
+    public void testCalcSide() {
+        System.out.println("calcSide");
+        float side1 = 3F;
+        float side2 = 4F;
+        RiddleControl instance = new RiddleControl();
+        float expResult = 5F;
+        float result = instance.calcSide(side1, side2);
+        assertEquals(expResult, result, 0.0);
+       
+        side1 = -10F;
+        side2 = 20F;
+        expResult = -1F;
+        result = instance.calcSide(side1, side2);
+        assertEquals(expResult, result, 0.0);
+        
+        side1 = 45F;
+        side2 = -20F;
+        expResult = -1F;
+        result = instance.calcSide(side1, side2);
+        assertEquals(expResult, result, 0.0);
+        
+        side1 = 45F;
+        side2 = 5000F;
+        expResult = -1F;
+        result = instance.calcSide(side1, side2);
+        assertEquals(expResult, result, 0.0);
+        
+        side1 = 0F;
+        side2 = 12F;
+        expResult = 0F;
+        result = instance.calcSide(side1, side2);
+        assertEquals(expResult, result, 0.0);
+        
+        side1 = 24F;
+        side2 = 0F;
+        expResult = 0F;
+        result = instance.calcSide(side1, side2);
+        assertEquals(expResult, result, 0.0);
+        
+        side1 = 50F;
+        side2 = 50F;
+        expResult = 70.71F;
+        result = instance.calcSide(side1, side2);
+        assertEquals(expResult, result, 0.1);
+    }
     
 }

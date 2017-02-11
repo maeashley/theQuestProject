@@ -2,8 +2,11 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
+*/
+
+
 package byui.cit260.questGame.control;
+import java.lang.Math;
 
 /**
  *
@@ -36,7 +39,17 @@ public class RiddleControl {
     
     public float calcSide(float side1, float side2)
     {
-        return 0;
+        
+        if(side1 < 0 || side1 > 50 || side2 < 0 || side2 > 50)
+        {
+            return -1;
+        }
+        
+        if(side1 == 0 || side2 ==0)
+            return 0;
+        
+        float side3 = (float) Math.sqrt((side1 * side1) + (side2 * side2));
+        return side3;
     }
     
     
