@@ -5,10 +5,27 @@
  */
 package byui.cit260.questGame.control;
 
+import byui.cit260.questGame.model.Player;
+import thequest.TheQuest;
+
 /**
  *
  * @author ashley
  */
 public class GameControl {
+
+    public static Player createPlayer(String playersName) {
+        if (playersName == null){
+            return null;
+        }
+        
+        Player player = new Player();
+        player.setName(playersName);
+        
+        TheQuest.setPlayer(player);
+        return player;
+        
+    
+    }
     
 }
