@@ -11,13 +11,22 @@ package byui.cit260.questGame.view;
  */
 public class StartProgramView {
     public void displayStartProgramView(){
-        
-        System.out.println("This text based game is a quest of knowledge and endurance. The goal of the game is to answer all riddles or puzzles correctly with the most tokens possible. "
-                + "The riddles, challenges, and puzzles become more difficult as the game progresses. Good luck!");
+        banner();
+        System.out.println("This text based game is a quest of knowledge and endurance.\n"
+                + "The goal of the game is to answer all riddles or puzzles correctly "
+                + "with the most tokens possible. \n"
+                + "The riddles, challenges, and puzzles become more difficult "
+                + "as the game progresses. Good luck!");
         System.out.println("Start Menu\nB - New Game\nH- Help Menu\nC- Continue Save Game\nE- Exit Game");
     }
     public void banner(){
-        System.out.println("The Quest");
+        System.out.println("████████╗██╗  ██╗███████╗     ██████╗ ██╗   ██╗███████╗███████╗████████╗\n" +
+"╚══██╔══╝██║  ██║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔════╝╚══██╔══╝\n" +
+"   ██║   ███████║█████╗      ██║   ██║██║   ██║█████╗  ███████╗   ██║   \n" +
+"   ██║   ██╔══██║██╔══╝      ██║▄▄ ██║██║   ██║██╔══╝  ╚════██║   ██║   \n" +
+"   ██║   ██║  ██║███████╗    ╚██████╔╝╚██████╔╝███████╗███████║   ██║   \n" +
+"   ╚═╝   ╚═╝  ╚═╝╚══════╝     ╚══▀▀═╝  ╚═════╝ ╚══════╝╚══════╝   ╚═╝   \n" +
+"                                                                        ");
     }
     
 }
