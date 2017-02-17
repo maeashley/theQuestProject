@@ -17,8 +17,11 @@ public class StartProgramView {
                 + "with the most tokens possible. \n"
                 + "The riddles, challenges, and puzzles become more difficult "
                 + "as the game progresses. Good luck!");
-        System.out.println("Start Menu\nB - New Game\nH- Help Menu\nC- Continue Save Game\nE- Exit Game");
+        
+        displayView();
+       
     }
+   
     public void banner(){
         System.out.println("████████╗██╗  ██╗███████╗     ██████╗ ██╗   ██╗███████╗███████╗████████╗\n" +
 "╚══██╔══╝██║  ██║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔════╝╚══██╔══╝\n" +
@@ -27,6 +30,10 @@ public class StartProgramView {
 "   ██║   ██║  ██║███████╗    ╚██████╔╝╚██████╔╝███████╗███████║   ██║   \n" +
 "   ╚═╝   ╚═╝  ╚═╝╚══════╝     ╚══▀▀═╝  ╚═════╝ ╚══════╝╚══════╝   ╚═╝   \n" +
 "                                                                        ");
+    }
+    
+    public void displayView(){
+      System.out.println("Start Menu\nB - New Game\nH- Help Menu\nC- Continue Save Game\nE- Exit Game");   
     }
     
 }
