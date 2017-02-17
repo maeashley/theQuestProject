@@ -8,7 +8,7 @@ package byui.cit260.questGame.model;
 import java.io.Serializable;
 /**
  *
- * @author caleb
+ * @author ashley
  */
 public class Backpack implements Serializable{
     private int tokenHints;
