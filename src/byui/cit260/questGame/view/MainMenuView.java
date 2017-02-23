@@ -13,6 +13,7 @@ import thequest.TheQuest;
 public class MainMenuView {
 
     private String promptMessage;
+     private String menu;
 
     public MainMenuView() {
         this.menu = "\n"
@@ -43,14 +44,16 @@ public class MainMenuView {
             done = this.doAction(menuOption);
         } while (!done);
     }
-    private String menu;
+   
 
     private String getMenuOption() {
+        
         Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
         
         while (!valid){
+            System.out.println(this.menu);
             System.out.println("\n" + this.promptMessage);
             value = keyboard.nextLine();
             value = value.trim();
@@ -111,7 +114,9 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-        System.out.println("DisplayHelpMenu");
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayHelpMenuView();
+        
     }
 
 }

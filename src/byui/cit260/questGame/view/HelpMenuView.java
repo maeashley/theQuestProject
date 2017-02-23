@@ -22,8 +22,7 @@ public class HelpMenuView {
                 + "T – Tokens you have\n"
                 + "X – Map\n"
                 + "B – Backpack contents\n"
-                + "R – Return to previous menu\n"
-                + "Q – quit to main menu";
+                + "Q – return to previous menu";
         
         
         this.promptMessage = "\nEnter the option: ";
@@ -36,6 +35,7 @@ public class HelpMenuView {
         boolean valid = false;
         
         while (!valid){
+            System.out.println(this.menu);
             System.out.println("\n" + this.promptMessage);
             value = keyboard.nextLine();
             value = value.trim();
@@ -83,10 +83,6 @@ public class HelpMenuView {
             case "B":
                 this.backpack();
                 break;
-                
-            case "R":
-                this.previousMenu();
-                break;
 
             default:
                 System.out.println("\n***Invalid selection *** Try again");
@@ -96,15 +92,21 @@ public class HelpMenuView {
     }
 
     private void goals() {
-       System.out.println("Goals");
+       System.out.println("The goal of the game is to answer all of the riddles"
+               + "and challenges correctly with the highest amount of tokens"
+               + "still available in your backpack.");
     }
 
     private void moves() {
-       System.out.println("Moves");
+       System.out.println("You can move left and from building to building but"
+               + "you cannot move up and down through the levels without"
+               + "having bypassed the riddle that was given to you in that scene");
     }
 
     private void tokens() {
-       System.out.println("Tokens");
+       System.out.println("Tokens reference the amount of reward you have"
+               + "earned from the levels you have passed throughout the game. "
+               + "You can find your tokens by going to a current scene.");
     }
 
     private void map() {
@@ -112,11 +114,9 @@ public class HelpMenuView {
     }
 
     private void backpack() {
-       System.out.println("Backpack");
-    }
-
-    private void previousMenu() {
-       System.out.println("Previous Menu");
+       System.out.println("In your Backpack, you have three things: Tokens,"
+               + " Hints, and Guesses. Each is stored here and can be retrieved"
+               + "when answering a riddle or challenge." );
     }
 
 }
