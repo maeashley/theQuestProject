@@ -60,8 +60,7 @@ public class BackpackMenuView {
             default:
                 System.out.println("\n***Invalid selection *** Try again");
                 break;
-                
-     
+              
         }
         return false;
     }

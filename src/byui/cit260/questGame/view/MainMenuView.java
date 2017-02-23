@@ -117,6 +117,10 @@ public class MainMenuView {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.displayHelpMenuView();
         
+    private void displayRiddleView() {
+        RiddleView riddle = new RiddleView();
+        riddle.displayRiddleView();
+        
     }
 
 }
