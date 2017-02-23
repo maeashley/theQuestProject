@@ -50,8 +50,8 @@ public class TheQuest {
        
     }
 
-    public static void setPlayer(Player player) {
-        
+    public static void setPlayer(Player playerObj) {
+        player = playerObj;
     }
     
 }
