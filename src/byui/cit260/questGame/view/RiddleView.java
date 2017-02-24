@@ -7,11 +7,8 @@ package byui.cit260.questGame.view;
 
 import java.util.Scanner;
 
-/**
- *
- * @author caleb
- */
 public class RiddleView {
+
     private String promptOne;
     private String promptTwo;
     
@@ -20,31 +17,58 @@ public class RiddleView {
         this.promptTwo="Please enter the volume.";
     }
     
-    private int getRiddlePrompt(){
+
+    private int getRiddlePromptOne(int mass) {
         Scanner keyboard = new Scanner(System.in);
         int value;
         value = -1;
         boolean valid = false;
-        
-        while (!valid){
+
+        while (!valid) {
             System.out.println(this.promptOne);
-            System.out.println("\n" + this.promptTwo);
-                       
-            if ((int)value<1){
-               System.out.println("\nInvalid value: value cannot be a"
+
+            if ((int) value < 1) {
+                System.out.println("\nInvalid value: value cannot be a"
                         + "negative integer");
-            } 
-            else {
-                System.out.println("You have entered two valid numbers."
+            } else if ((int) value > 5000) {
+                System.out.println("You have entered an invalid number."
                         + "Do not use values lower than 0.");
+            } else {
+                System.out.println("You have entered a valid mass.");
             }
-            
+
         }
-       return -1;
+        return 0;
     }
 
-    public void displayRiddleView() {
-        System.out.println("stuff here.");
+    private int getRiddlePromptTwo(int volume) {
+        Scanner keyboard = new Scanner(System.in);
+        int value;
+        value = -1;
+        boolean valid = false;
+
+        while (!valid) {
+            System.out.println(this.promptOne);
+
+            if ((int) value < 1) {
+                System.out.println("\nInvalid value: value cannot be a"
+                        + "negative integer");
+            } else if ((int) value > 25) {
+                System.out.println("You have entered an invalid number."
+                        + "Do not use values lower than 0.");
+            } else {
+                System.out.println("You have entered a valid volume.");
+            }
+
+        }
+        return 0;
+
     }
-    
+
+    void displayRiddleView() {
+        System.out.println(this.promptOne);
+        System.out.println(this.promptTwo);
+
+    }
+
 }

@@ -13,6 +13,20 @@ import java.lang.Math;
  * @author caleb
  */
 public class RiddleControl {
+    //We want to Calculate the temperature using the input values from the user.
+    
+    /* So we use the following solution for the problem:
+    
+            calcTemperature(Celsius) : double
+                If (Celsius <273.15) THEN 
+                Return -274
+                If (Celsius>3000) THEN
+                    Return -274
+                Temperature= c* (9/5) + 32
+                    Return temperature
+
+    
+    */
     public float calcTemperature(float celsius)
     {
         if (celsius < -273.15  || celsius > 3000)
