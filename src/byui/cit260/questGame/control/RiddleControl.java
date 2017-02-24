@@ -17,7 +17,7 @@ public class RiddleControl {
     
     /* So we use the following solution for the problem:
     
-            calcTemperature(Celsius) : double
+            calcTemperature(Celsius) : float
                 If (Celsius < -273.15) THEN 
                 Return -274
                 If (Celsius > 3000) THEN
