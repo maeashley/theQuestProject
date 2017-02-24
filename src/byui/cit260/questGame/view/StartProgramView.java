@@ -32,9 +32,6 @@ public class StartProgramView {
         } while (!done);
         
         
-        
-
-        
        // displayView();
        
     }
