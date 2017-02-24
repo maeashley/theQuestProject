@@ -83,6 +83,7 @@ public class HelpMenuView {
             case "B":
                 this.backpack();
                 break;
+                
 
             default:
                 System.out.println("\n***Invalid selection *** Try again");
