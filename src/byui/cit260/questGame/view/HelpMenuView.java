@@ -48,6 +48,8 @@ public class HelpMenuView {
         }
         return value;
     }
+    
+    
     void displayHelpMenuView() {
         boolean done = false;
         do {
