@@ -23,7 +23,7 @@ public class RiddleView {
     private int getRiddlePrompt(){
         Scanner keyboard = new Scanner(System.in);
         int value;
-        value = -1 ;
+        value = -1;
         boolean valid = false;
         
         while (!valid){
