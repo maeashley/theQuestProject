@@ -18,11 +18,10 @@ public class RiddleControl {
     /* So we use the following solution for the problem:
     
             calcTemperature(Celsius) : double
-                If (Celsius <273.15) THEN 
+                If (Celsius <273.15 OR Celsius > 3000) THEN 
                 Return -274
-                If (Celsius>3000) THEN
-                    Return -274
-                Temperature= c* (9/5) + 32
+               
+                Temperature= celsius* (9/5) + 32
                     Return temperature
 
     
