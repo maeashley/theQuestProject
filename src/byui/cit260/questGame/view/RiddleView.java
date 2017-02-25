@@ -21,7 +21,7 @@ public class RiddleView {
     private int getRiddlePromptOne(int mass) {
         Scanner keyboard = new Scanner(System.in);
         int value;
-        value = -1;
+        value = keyboard.nextInt();
         boolean valid = false;
 
         while (!valid) {
@@ -44,7 +44,7 @@ public class RiddleView {
     private int getRiddlePromptTwo(int volume) {
         Scanner keyboard = new Scanner(System.in);
         int value;
-        value = -1;
+       value = keyboard.nextInt();
         boolean valid = false;
 
         while (!valid) {
