@@ -11,11 +11,12 @@ public class RiddleView {
 
     private String promptOne;
     private String promptTwo;
-
-    public RiddleView() {
-        this.promptOne = "Please enter the mass.";
-        this.promptTwo = "Please enter the volume.";
+    
+    public RiddleView(){
+        this.promptOne="Please enter the mass.";
+        this.promptTwo="Please enter the volume.";
     }
+    
 
     private int getRiddlePromptOne(int mass) {
         Scanner keyboard = new Scanner(System.in);

@@ -67,7 +67,7 @@ public class GameMenuView {
                 this.map();
                 break;
 
-            case "B":
+            case "Y":
                 this.backPack();
                 break;
 

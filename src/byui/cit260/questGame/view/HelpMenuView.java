@@ -29,7 +29,7 @@ public class HelpMenuView {
     }
 
     private String getHelpOption() {
-        
+       
         Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
@@ -48,6 +48,8 @@ public class HelpMenuView {
         }
         return value;
     }
+    
+    
     void displayHelpMenuView() {
         boolean done = false;
         do {

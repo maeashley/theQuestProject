@@ -10,7 +10,7 @@ import thequest.TheQuest;
  * and open the template in the editor.
  */
 
-public class MainMenuView {
+public class MainMenuView extends View {
 
     private String promptMessage;
      private String menu;
