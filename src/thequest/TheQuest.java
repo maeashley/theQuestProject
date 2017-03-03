@@ -45,9 +45,8 @@ public class TheQuest {
         
         StartProgramView startMenu = new StartProgramView();
         
-       startMenu.displayStartProgramView();
-     
-       
+       startMenu.display();
+
     }
 
     public static void setPlayer(Player playerObj) {
