@@ -17,6 +17,11 @@ public class Game implements Serializable {
     private Map map;
     private Backpack backpack;
     
+    public Game(){
+     // Do Nothing 
+     int  noPeple = 1;
+    }
+    
     public Game(int noPeople) {
         this.noPeople = noPeople;
     }

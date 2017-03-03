@@ -16,16 +16,14 @@ import byui.cit260.questGame.model.Backpack;
 import byui.cit260.questGame.model.Game;
 import byui.cit260.questGame.view.StartProgramView;
 
-/**
- *
- * @author MMorley
- */
+
 public class TheQuest {
 
     /**
      * @param args the command line arguments
      */
-    private static Game currentGame = null;
+    private static Game currentGame;
+    private static Player player;
 
     public static Game getCurrentGame() {
         return currentGame;
@@ -34,18 +32,22 @@ public class TheQuest {
     public static void setCurrentGame(Game currentGame) {
         TheQuest.currentGame = currentGame;
     }
-      private static Player player = null;
+      
 
     public static Player getPlayer() {
         return player;
     }
       
+    
+    // MAIN CLASS
     public static void main(String[] args) {
       
         
         StartProgramView startMenu = new StartProgramView();
+        startMenu.getPlayerName( "\nPlease enter your name.");
+        startMenu.display();
         
-       startMenu.display();
+        
 
     }
 

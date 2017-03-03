@@ -12,7 +12,7 @@ import thequest.TheQuest;
 
 public class MainMenuView extends View {
 
-    private String promptMessage;
+    //private String promptMessage;
      private String menu;
 
     public MainMenuView() {

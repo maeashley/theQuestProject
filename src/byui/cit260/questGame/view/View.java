@@ -14,6 +14,7 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
 
     protected String promptMessage;
+    
 
     public View() {
     }
@@ -26,6 +27,7 @@ public abstract class View implements ViewInterface {
     public void display() {
         boolean done = false;
         do {
+            
             String value = this.getInput();
             if (value.toUpperCase().equals("Q")) {
                 return;
