@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Harry
  */
-public class GameMenuView {
+public class GameMenuView extends View {
 
     private String menu;
     private String promptMessage;
@@ -27,42 +27,12 @@ public class GameMenuView {
         this.promptMessage = "\nEnter the option: ";
     }
 
-    private String getGameOption() {
-        
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid){
-            System.out.println(this.menu);
-            System.out.println("\n" + this.promptMessage);
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length()<1){
-            System.out.println("\nInvalid value: value cannot be blank");
-            continue;
-            }
-            break;
-        }
-        return value;
-    }
-    void displayGameMenuView() {
-        boolean done = false;
-        do {
-            String gameOption = this.getGameOption();
-            if (gameOption.toUpperCase().equals("Q")) {
-                return;
-            }
+    
+    @Override 
+    public boolean doAction(String value) {
+        value = value.toUpperCase();
 
-            done = this.doAction(gameOption);
-        } while (!done);
-    }
-
-    private boolean doAction(String choice) {
-        choice = choice.toUpperCase();
-
-        switch (choice) {
+        switch (value) {
             case "V":
                 this.map();
                 break;

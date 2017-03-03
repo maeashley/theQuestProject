@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author caleb
  */
-public class BackpackMenuView {
+public class BackpackMenuView extends View {
     private String menu;
     private String promptMessage;
     
@@ -22,29 +22,11 @@ public class BackpackMenuView {
                 + "\n Q- Quit to previous menu";
         this.promptMessage="\n Enter your desired option: ";
 }
-    private String getBackpackOption(){
-    Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid){
-            System.out.println(this.menu);
-            System.out.println("\n" + this.promptMessage);
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length()<1){
-            System.out.println("\nInvalid value: value cannot be blank");
-            continue;
-            }
-            break;
-        }
-        return value;}
-    
-    private boolean doAction(String choice) {
-        choice = choice.toUpperCase();
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase();
 
-        switch (choice) {
+        switch (value) {
             case "H":
                 this.hints();
                 break;

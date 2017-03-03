@@ -67,10 +67,11 @@ public class MainMenuView extends View {
         return value;
     }
 
-    private boolean doAction(String choice) {
-        choice = choice.toUpperCase();
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase();
 
-        switch (choice) {
+        switch (value) {
             case "N":
                 this.startNewGame();
                 break;
@@ -100,7 +101,7 @@ public class MainMenuView extends View {
         
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
+        gameMenu.display();
         
         
     }
