@@ -97,7 +97,7 @@ public class GameMenuView {
 
     private void help() {
        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+        helpMenu.display();
     }
 
     private void map() {

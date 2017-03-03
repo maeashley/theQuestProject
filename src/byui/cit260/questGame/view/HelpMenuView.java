@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Harry
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
 
     private String menu;
     private String promptMessage;
@@ -28,41 +28,9 @@ public class HelpMenuView {
         this.promptMessage = "\nEnter the option: ";
     }
 
-    private String getHelpOption() {
-       
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid){
-            System.out.println(this.menu);
-            System.out.println("\n" + this.promptMessage);
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length()<1){
-            System.out.println("\nInvalid value: value cannot be blank");
-            continue;
-            }
-            break;
-        }
-        return value;
-    }
-    
-    
-    void displayHelpMenuView() {
-        boolean done = false;
-        do {
-            String helpOption = this.getHelpOption();
-            if (helpOption.toUpperCase().equals("Q")) {
-                return;
-            }
-
-            done = this.doAction(helpOption);
-        } while (!done);
-    }
-
-    private boolean doAction(String choice) {
+   
+    @Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
 
         switch (choice) {

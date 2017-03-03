@@ -12,6 +12,6 @@ package byui.cit260.questGame.view;
 public interface ViewInterface {
     public void display();
     public String getInput();
-    public boolean doAction();
+    public boolean doAction(String Value);
     
 }

@@ -33,44 +33,12 @@ public class MainMenuView extends View {
     
     }
 
-    void displayMainMenuView() {
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) {
-                return;
-            }
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase();
 
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-   
-
-    private String getMenuOption() {
-        
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid){
-            System.out.println(this.menu);
-            System.out.println("\n" + this.promptMessage);
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length()<1){
-            System.out.println("\nInvalid value: value cannot be blank");
-            continue;
-            }
-            break;
-        }
-        return value;
-    }
-
-    private boolean doAction(String choice) {
-        choice = choice.toUpperCase();
-
-        switch (choice) {
+        switch (value) 
+        {
             case "N":
                 this.startNewGame();
                 break;
@@ -115,7 +83,7 @@ public class MainMenuView extends View {
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+        helpMenu.display();
     }
         
     private void displayRiddleView() {
