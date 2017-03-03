@@ -14,6 +14,7 @@ import byui.cit260.questGame.model.Scene;
 import byui.cit260.questGame.model.Map;
 import byui.cit260.questGame.model.Backpack;
 import byui.cit260.questGame.model.Game;
+import byui.cit260.questGame.view.RiddleView;
 import byui.cit260.questGame.view.StartProgramView;
 
 
@@ -48,8 +49,11 @@ public class TheQuest {
         startMenu.display();
         
         
-
+        RiddleView riddle = new RiddleView();
+        riddle.display();
+        
     }
+    
 
     public static void setPlayer(Player playerObj) {
         player = playerObj;
