@@ -100,7 +100,7 @@ public class MainMenuView {
         
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.displayGameMenuView();
         
         
     }
