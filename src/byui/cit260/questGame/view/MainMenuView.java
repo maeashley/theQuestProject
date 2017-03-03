@@ -16,7 +16,7 @@ public class MainMenuView extends View {
      private String menu;
 
     public MainMenuView() {
-        this.menu = "\n"
+        super( "\n"
                 + "\n-------------------"
                 + "\n| Main Menu        |"
                 + "\n-------------------"
@@ -25,7 +25,7 @@ public class MainMenuView extends View {
                 + "\nH- Get help on how to play the game"
                 + "\nS- Save game"
                 + "\nQ- Quit"
-                + "\n---------------------";
+                + "\n---------------------");
     
         
         this.promptMessage = "\nEnter the option: ";

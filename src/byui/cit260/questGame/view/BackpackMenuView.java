@@ -16,10 +16,10 @@ public class BackpackMenuView extends View {
     private String promptMessage;
     
     public BackpackMenuView(){
-        this.menu= "\n H- Number of hints"
+        super( "\n H- Number of hints"
                 + "\n T- Number of tokens"
                 + "\n G- Guesses available"
-                + "\n Q- Quit to previous menu";
+                + "\n Q- Quit to previous menu");
         this.promptMessage="\n Enter your desired option: ";
 }
     @Override
