@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class HelpMenuView extends View {
 
     private String menu;
-    private String promptMessage;
+    //private String promptMessage;
 
     public HelpMenuView() {
         this.menu = "G – Goal of the game\n"

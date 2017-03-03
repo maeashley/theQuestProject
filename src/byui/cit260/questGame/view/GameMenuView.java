@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class GameMenuView extends View {
 
     private String menu;
-    private String promptMessage;
+    //private String promptMessage;
 
     public GameMenuView() {
         this.menu = "V – View Map\n"

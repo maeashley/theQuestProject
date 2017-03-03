@@ -14,11 +14,17 @@ import java.util.Scanner;
  * @author ashley
  */
 public class StartProgramView extends View{
-    private String promptMessage;
+    //private String promptMessage;
+    private String menu;
     
     public StartProgramView(){
-        this.promptMessage = "\nPlease enter your name.";
+     
+        super("Start Menu\nB - New Game\nH- Help Menu\nC- Continue Save Game\nE- Exit Game");
+          
+        
         this.banner();
+        
+        
     }
     
     
@@ -40,17 +46,15 @@ public class StartProgramView extends View{
                 + "as the game progresses. Good luck!");
     }
     
-    public void displayView(){
-      System.out.println("Start Menu\nB - New Game\nH- Help Menu\nC- Continue Save Game\nE- Exit Game");   
-    }
+  
 
-    private String getPlayerName() {
+    public String getPlayerName(String prompt) {
         Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
         
         while (!valid){
-            System.out.println("\n" + this.promptMessage);
+            System.out.println("\n" + prompt);
             value = keyboard.nextLine();
             value = value.trim();
             
