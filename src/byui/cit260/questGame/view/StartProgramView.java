@@ -16,12 +16,14 @@ import java.util.Scanner;
 public class StartProgramView extends View{
     //private String promptMessage;
     private String menu;
+    private SideView side3;
     
     public StartProgramView(){
      
         super("Start Menu\nB - New Game\nH- Help Menu\nC- Continue Save Game\nE- Exit Game");
           
-        
+        side3 = new SideView();
+        side3.doAction("Something");
         this.banner();
         
         
