@@ -14,62 +14,33 @@ public class RiddleView extends View {
     public RiddleView(){
         super("Please enter the mass.");
     }
-    
-
-    private int getRiddlePromptOne(int mass) {
-        Scanner keyboard = new Scanner(System.in);
-        int value;
-        value = keyboard.nextInt();
-        boolean valid = false;
-
-        while (!valid) {
-            System.out.println("Please enter the mass.");
-
-            if ((int) value < 1) {
-                System.out.println("\nInvalid value: value cannot be a"
-                        + "negative integer");
-            } else if ((int) value > 5000) {
-                System.out.println("You have entered an invalid number."
-                        + "Do not use values lower than 0.");
-            } else {
-                System.out.println("You have entered a valid mass.");
-            }
-
-        }
-        return 0;
-    }
 
     
     
     @Override
      public boolean doAction(String value) {
-//        value = value.toUpperCase();
-//
-//        switch (value) {
-//            case "H":
-//                this.hints();
-//                break;
-//
-//            case "G":
-//                this.guesses();
-//                break;
-//
-//            case "T":
-//                this.tokens();
-//                break;
-//          
-//            default:
-//                System.out.println("\n***Invalid selection *** Try again");
-//                break;
-//              
-//        }
-        return false;
-    }
+        boolean valid = false;
+        int massValue = Integer.parseInt(value);
 
-    void displayRiddleView() {
-        System.out.println("Please enter the volume.");
-       
+        while (!valid) {
+            System.out.println("Please enter the mass.");
 
+            if (massValue < 1) {
+                System.out.println("\nInvalid value: value cannot be a"
+                        + "negative integer");
+                return false;
+            } else if (massValue > 5000) {
+                System.out.println("You have entered an invalid number."
+                        + "Do not use values larger than 5000.");
+                return false;
+            } else {
+                System.out.println("You have entered a valid mass.");
+                valid = true;
+            }
+
+        }
+        
+        return true;
     }
 
 }

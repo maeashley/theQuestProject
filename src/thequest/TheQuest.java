@@ -45,12 +45,10 @@ public class TheQuest {
       
         
         StartProgramView startMenu = new StartProgramView();
-        startMenu.getPlayerName( "\nPlease enter your name.");
+       // startMenu.getPlayerName( "\nPlease enter your name.");
         startMenu.display();
         
         
-        RiddleView riddle = new RiddleView();
-        riddle.display();
         
     }
     

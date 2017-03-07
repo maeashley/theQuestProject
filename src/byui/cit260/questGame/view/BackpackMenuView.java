@@ -19,8 +19,9 @@ public class BackpackMenuView extends View {
         super( "\n H- Number of hints"
                 + "\n T- Number of tokens"
                 + "\n G- Guesses available"
-                + "\n Q- Quit to previous menu");
-        this.promptMessage="\n Enter your desired option: ";
+                + "\n Q- Quit to previous menu"
+                + "\nEnter the option: ");
+       
 }
     @Override
     public boolean doAction(String value) {

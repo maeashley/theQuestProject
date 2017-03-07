@@ -25,12 +25,9 @@ public class MainMenuView extends View {
                 + "\nH- Get help on how to play the game"
                 + "\nS- Save game"
                 + "\nQ- Quit"
-                + "\n---------------------");
-    
-        
-        this.promptMessage = "\nEnter the option: ";
-    
-    
+                + "\n---------------------" 
+                + "\nEnter the option:"
+                );
     }
 
     @Override
@@ -86,10 +83,6 @@ public class MainMenuView extends View {
         helpMenu.display();
     }
         
-    private void displayRiddleView() {
-        RiddleView riddle = new RiddleView();
-        riddle.displayRiddleView();
-    }
     
    }
 

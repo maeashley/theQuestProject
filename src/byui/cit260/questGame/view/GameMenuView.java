@@ -13,18 +13,17 @@ import java.util.Scanner;
  */
 public class GameMenuView extends View {
 
-    private String menu;
-    //private String promptMessage;
 
     public GameMenuView() {
-        this.menu = "V – View Map\n"
+        super ( "\n ----- Game Menu ------\n"
+                + "V – View Map\n"
                 + "B - BackPack Contents   \n"
                 + "L – Current Location\n"
+                + "R - View a Riddle\n"
                 + "H - Help \n"
-                + "Q – return to previous menu";
+                + "Q – return to previous menu\n"
+                + "Enter the option: ");
         
-        
-        this.promptMessage = "\nEnter the option: ";
     }
 
     
@@ -47,6 +46,10 @@ public class GameMenuView extends View {
 
             case "H":
                 this.help();
+                break;
+                
+            case "R":
+                this.riddle();
                 break;
             
             default:
@@ -74,11 +77,11 @@ public class GameMenuView extends View {
        System.out.println("Map");
     }
 
-    void displayMenu() {
-        
-        System.out.println(menu);
-         System.out.println(promptMessage);
     
+
+    private void riddle() {
+        RiddleView riddle = new RiddleView();
+        riddle.display();
     }
     
 

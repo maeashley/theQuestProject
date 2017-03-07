@@ -22,10 +22,9 @@ public class HelpMenuView extends View {
                 + "T – Tokens you have\n"
                 + "X – Map\n"
                 + "B – Backpack contents\n"
-                + "Q – return to previous menu";
+                + "Q – return to previous menu"
+                + "\nEnter the option: ";
         
-        
-        this.promptMessage = "\nEnter the option: ";
     }
 
    
