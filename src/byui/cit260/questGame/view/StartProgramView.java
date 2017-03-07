@@ -19,7 +19,7 @@ public class StartProgramView extends View{
     
     public StartProgramView(){
      
-        super("Start Menu\nB - New Game\nH- Help Menu\nC- Continue Save Game\nE- Exit Game");
+        super("Enter Player Name:");
           
         
         this.banner();
