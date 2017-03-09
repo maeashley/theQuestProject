@@ -16,6 +16,7 @@ import byui.cit260.questGame.model.Backpack;
 import byui.cit260.questGame.model.Game;
 import byui.cit260.questGame.view.RiddleView;
 import byui.cit260.questGame.view.StartProgramView;
+import java.util.ArrayList;
 
 
 public class TheQuest {
@@ -40,6 +41,8 @@ public class TheQuest {
     }
       
     
+    
+    
     // MAIN CLASS
     public static void main(String[] args) {
       
@@ -47,14 +50,11 @@ public class TheQuest {
         StartProgramView startMenu = new StartProgramView();
        // startMenu.getPlayerName( "\nPlease enter your name.");
         startMenu.display();
-        
-        
-        
+     
     }
-    
-
+  
     public static void setPlayer(Player playerObj) {
         player = playerObj;
     }
-    
+
 }
