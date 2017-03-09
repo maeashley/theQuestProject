@@ -11,14 +11,27 @@ import java.io.Serializable;
  *
  * @author Harry
  */
-public class Map implements Serializable{
+public class Map implements Serializable {
+
     private int buildingCount;
     private int floorCount;
     private int currentBuilding;
     private int currentFloor;
     private int currentScene;
 
+    private Location[][] locations;
+
     public Map() {
+        
+       
+    }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
     }
 
     public Map(int buildingCount, int floorCount) {
@@ -75,8 +88,5 @@ public class Map implements Serializable{
     public String toString() {
         return "Map{" + "buildingCount=" + buildingCount + ", floorCount=" + floorCount + '}';
     }
-    
-    
-    
-    
+
 }

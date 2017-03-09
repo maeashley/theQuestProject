@@ -45,10 +45,11 @@ public class TheQuest {
     
     // MAIN CLASS
     public static void main(String[] args) {
-      
+        
+        
         
         StartProgramView startMenu = new StartProgramView();
-       // startMenu.getPlayerName( "\nPlease enter your name.");
+        // // startMenu.getPlayerName( "\nPlease enter your name.");
         startMenu.display();
      
     }

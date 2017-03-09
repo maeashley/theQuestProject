@@ -14,8 +14,11 @@ public class Location implements Serializable {
     private int building;
     private int floor;
     private boolean visited;
+    private Scene scene;
 
-    public Location() {
+    public Location(int building, int floor) {
+        this.building = building;
+        this.floor = floor;
     }
 
     public Location(int building, int floor, boolean visited) {

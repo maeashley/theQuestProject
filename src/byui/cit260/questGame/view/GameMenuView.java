@@ -5,7 +5,9 @@
  */
 package byui.cit260.questGame.view;
 
+import byui.cit260.questGame.control.GameControl;
 import java.util.Scanner;
+import thequest.TheQuest;
 
 /**
  *
@@ -74,11 +76,32 @@ public class GameMenuView extends View {
     }
 
     private void map() {
-       System.out.println("Map");
+       System.out.println("      THE QUEST  ");
+        System.out.println("    1   2   3   4   5");
+         for(int i  = 0; i < 6; i++)
+        {   
+            System.out.println("-----------------------");
+            System.out.print(i + 1 + "| ");
+            for (int j = 0; j < 5; j++){
+                if(i == 5 && j== 0){
+                System.out.print(" S |");
+                }
+                else
+                {
+                     System.out.print(" X |");
+                }
+            }
+            System.out.println();
+            
+        }
+          System.out.println("-----------------------");
+      
     }
 
     
-
+    public void startNewGame(){
+        GameControl.createNewGame(TheQuest.getPlayer());
+    }
     private void riddle() {
         RiddleView riddle = new RiddleView();
         riddle.display();

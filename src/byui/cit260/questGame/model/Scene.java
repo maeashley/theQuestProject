@@ -16,6 +16,8 @@ public class Scene implements Serializable{
     private String description;
     private int level;
     private boolean blockedLoaction;
+    private Riddle riddle;
+    private Actor actor;
 
     public Scene() {
     }

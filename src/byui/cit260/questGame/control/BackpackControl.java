@@ -5,10 +5,16 @@
  */
 package byui.cit260.questGame.control;
 
+import byui.cit260.questGame.model.Backpack;
+
 /**
  *
  * @author ashley
  */
 public class BackpackControl {
+
+    static Backpack createBackPack() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

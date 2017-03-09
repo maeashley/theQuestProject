@@ -5,6 +5,9 @@
  */
 package byui.cit260.questGame.control;
 
+import byui.cit260.questGame.model.Backpack;
+import byui.cit260.questGame.model.Game;
+import byui.cit260.questGame.model.Map;
 import byui.cit260.questGame.model.Player;
 import thequest.TheQuest;
 
@@ -32,7 +35,18 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-            System.out.println("CreateNewGame");
+            Game game = new Game();
+            
+            Map map = MapControl.createMap();
+            Backpack backpack = BackpackControl.createBackPack();
+            
+            TheQuest.setCurrentGame(game);
+            game.setPlayer(player);  
+            game.setNoPeople(1);
+            game.setMap(map);
+            game.setBackpack(backpack);
+            
+            
     }
     
 }

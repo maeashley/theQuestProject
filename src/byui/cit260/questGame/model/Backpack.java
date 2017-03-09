@@ -11,20 +11,23 @@ import java.io.Serializable;
  * @author ashley
  */
 public class Backpack implements Serializable{
-    private int tokenHints;
+    private int tokens;
+    private int hints;
     private int guesses;
 
     public Backpack() {
     }
     
 
-    public int getTokenHints() {
-        return tokenHints;
+    public int getToken() {
+        return tokens;
     }
-
-    public void setTokenHints(int tokenHints) {
-        this.tokenHints = tokenHints;
-    }
+public int getHints(){
+    return hints;
+}
+//    public void setTokenHints(int tokenHints) {
+//        this.tokenHints = tokenHints;
+//    }
 
     public int getGuesses() {
         return guesses;
@@ -37,14 +40,14 @@ public class Backpack implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 13 * hash + this.tokenHints;
+       // hash = 13 * hash + this.tokenHints;
         hash = 13 * hash + this.guesses;
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Backpack{" + "tokenHints=" + tokenHints + ", guesses=" + guesses + '}';
+        return "Backpack{" + "tokenHints=" + hints + ", guesses=" + guesses + '}';
     }
 
     @Override
@@ -59,7 +62,7 @@ public class Backpack implements Serializable{
             return false;
         }
         final Backpack other = (Backpack) obj;
-        if (this.tokenHints != other.tokenHints) {
+        if (this.tokens != other.tokens) {
             return false;
         }
         if (this.guesses != other.guesses) {
