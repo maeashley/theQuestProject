@@ -17,6 +17,7 @@ public class Riddle implements Serializable{
         //class instance variables
         private String name;
         private double bestTime;
+        
 
     public Riddle() {
     }
