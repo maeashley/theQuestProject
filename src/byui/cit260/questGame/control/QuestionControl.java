@@ -11,7 +11,7 @@ import java.lang.Math;
 
 /**
  *
- * @author caleb
+ * @author ashley
  */
 public class QuestionControl {
    
