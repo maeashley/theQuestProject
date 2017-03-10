@@ -14,7 +14,8 @@ import byui.cit260.questGame.model.Backpack;
 public class BackpackControl {
 
     static Backpack createBackPack() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Backpack backpack = new Backpack();
+        return backpack;
     }
     
 }

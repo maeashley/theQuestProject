@@ -13,15 +13,13 @@ import java.util.Scanner;
  *
  * @author ashley
  */
-public class StartProgramView extends View{
+public class StartProgramView{
     //private String promptMessage;
-    private String menu;
+    private String prompt;
    
     public StartProgramView(){
-     
-        super("Enter Player Name:");
-          
-      
+          prompt = "Enter your Name: ";
+          banner();
         
         
     }
@@ -47,7 +45,7 @@ public class StartProgramView extends View{
     
   
 
-    public String getPlayerName(String prompt) {
+    public String getPlayerName() {
         Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
@@ -56,27 +54,24 @@ public class StartProgramView extends View{
             System.out.println("\n" + prompt);
             value = keyboard.nextLine();
             value = value.trim();
+            valid = true;
+            if (value.length()<2){
+            System.out.println("\nInvalid players name: " + value +
+                    " \nThe name must be greater than one character in length");
+            valid = false;
             
-            if (value.length()<1){
-            System.out.println("\nInvalid value: value cannot be blank");
-            continue;
             }
-            break;
         }
                 
         return value;
          
     }
 
-    @Override
+    
+    
+ 
     public boolean doAction(String value) {
-        if (value.length()<2){
-            System.out.println("\nInvalid players name: " + value +
-                    " \nThe name must be greater than one character in length");
-            return false;
-        }
-        
-        
+    
         Player player = GameControl.createPlayer(value);
         
         if (player== null){

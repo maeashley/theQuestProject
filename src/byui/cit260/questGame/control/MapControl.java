@@ -15,7 +15,7 @@ import byui.cit260.questGame.model.Map;
 public class MapControl {
 
     public static Map createMap() {
-        Map map = null;
+        Map map = new Map();
         
         
         System.out.println("Create Map Called");
