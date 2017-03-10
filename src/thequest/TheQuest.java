@@ -49,8 +49,10 @@ public class TheQuest {
         
         
         StartProgramView startMenu = new StartProgramView();
-        // // startMenu.getPlayerName( "\nPlease enter your name.");
-        startMenu.display();
+        String name = startMenu.getPlayerName();
+        
+        startMenu.doAction(name);
+       
      
     }
   

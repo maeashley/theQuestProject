@@ -36,16 +36,25 @@ public class GameControl {
 
     public static void createNewGame(Player player) {
             Game game = new Game();
+            TheQuest.setCurrentGame(game);
+            if(game.getPlayer() == null)
+            {
+                game.setPlayer(player);  
             
+            }
             Map map = MapControl.createMap();
-            Backpack backpack = BackpackControl.createBackPack();
+            //Backpack backpack = BackpackControl.createBackPack();
             
             TheQuest.setCurrentGame(game);
-            game.setPlayer(player);  
-            game.setNoPeople(1);
-            game.setMap(map);
-            game.setBackpack(backpack);
+            if(game.getPlayer() == null)
+            {
+                game.setPlayer(player);  
             
+            }
+          game.setNoPeople(1);
+          game.setMap(map);
+          //game.setBackpack(backpack);
+           
             
     }
     
