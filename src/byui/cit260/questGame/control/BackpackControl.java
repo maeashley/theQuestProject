@@ -18,3 +18,12 @@ public class BackpackControl {
     }
     
 }
+
+/*
+
+for (i=0; i,list.length-1; i++){
+    if([i]==value){
+        return i;
+    }
+}
+*/
