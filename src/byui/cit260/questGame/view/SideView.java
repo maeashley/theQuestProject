@@ -66,13 +66,14 @@ public class SideView extends View {
 
             valid = false;
 
-            float side3 = r1.calcSide(value1, value2);
+            /*float side3 = r1.calcSide(value1, value2);
             if (side3 < 0) {
                 System.out.println("Please enter valid values");
             } else {
                 System.out.println("Side 3: " + side3);
                 valid = true;
             }
+*/
 
         }
         return true;     

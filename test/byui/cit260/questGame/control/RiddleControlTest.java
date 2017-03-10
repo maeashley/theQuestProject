@@ -20,6 +20,7 @@ public class RiddleControlTest {
     /**
      * Test of calcTemperature method, of class QuestionControl.
      */
+    /*
     @Test
     public void testCalcTemperature() {
         System.out.println("calcTemperature");
@@ -63,6 +64,7 @@ public class RiddleControlTest {
     /**
      * Test of calcDensity method, of class QuestionControl.
      */
+    /*
     @Test
     public void testCalcDensity() {
         System.out.println("calcDensity");
@@ -114,6 +116,7 @@ public class RiddleControlTest {
     /**
      * Test of calcSide method, of class QuestionControl.
      */
+    /*
     @Test
     public void testCalcSide() {
         System.out.println("calcSide");
@@ -160,5 +163,7 @@ public class RiddleControlTest {
         result = instance.calcSide(side1, side2);
         assertEquals(expResult, result, 0.1);
     }
-    
+   */ 
 }
+
+
