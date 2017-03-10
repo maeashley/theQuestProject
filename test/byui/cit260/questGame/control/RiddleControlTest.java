@@ -18,13 +18,13 @@ public class RiddleControlTest {
     }
 
     /**
-     * Test of calcTemperature method, of class RiddleControl.
+     * Test of calcTemperature method, of class QuestionControl.
      */
     @Test
     public void testCalcTemperature() {
         System.out.println("calcTemperature");
         float celsius = 45F;
-        RiddleControl instance = new RiddleControl();
+        QuestionControl instance = new QuestionControl();
         float expResult = 113F;
         float result = instance.calcTemperature(celsius);
         assertEquals(expResult, result, 0.0);
@@ -61,14 +61,14 @@ public class RiddleControlTest {
     }
 
     /**
-     * Test of calcDensity method, of class RiddleControl.
+     * Test of calcDensity method, of class QuestionControl.
      */
     @Test
     public void testCalcDensity() {
         System.out.println("calcDensity");
         float mass = 25F;
         float volume = 1.5F;
-        RiddleControl instance = new RiddleControl();
+        QuestionControl instance = new QuestionControl();
         float expResult = 16.6F;
         float result = instance.calcDensity(mass, volume);
         assertEquals(expResult, result, 0.1);
@@ -112,14 +112,14 @@ public class RiddleControlTest {
     }
 
     /**
-     * Test of calcSide method, of class RiddleControl.
+     * Test of calcSide method, of class QuestionControl.
      */
     @Test
     public void testCalcSide() {
         System.out.println("calcSide");
         float side1 = 3F;
         float side2 = 4F;
-        RiddleControl instance = new RiddleControl();
+        QuestionControl instance = new QuestionControl();
         float expResult = 5F;
         float result = instance.calcSide(side1, side2);
         assertEquals(expResult, result, 0.0);

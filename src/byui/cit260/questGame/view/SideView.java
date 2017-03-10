@@ -5,7 +5,7 @@
  */
 package byui.cit260.questGame.view;
 
-import byui.cit260.questGame.control.RiddleControl;
+import byui.cit260.questGame.control.QuestionControl;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -31,7 +31,7 @@ public class SideView extends View {
     public boolean doAction(String value) {
        
 
-        RiddleControl r1 = new RiddleControl();
+        QuestionControl r1 = new QuestionControl();
 
         Scanner keyboard = new Scanner(System.in);
         int value1 = 0;
