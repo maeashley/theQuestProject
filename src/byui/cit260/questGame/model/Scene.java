@@ -14,9 +14,18 @@ import java.util.Objects;
  */
 public class Scene implements Serializable{
     private String description;
-    private int level;
-    private boolean blockedLoaction;
-    private Riddle riddle;
+    private String symbol;
+  
+    private boolean blockedLocation;
+    private Question question;
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
     private Actor actor;
 
     public Scene() {
@@ -24,8 +33,32 @@ public class Scene implements Serializable{
 
     public Scene(String description, int level, boolean blockedLoaction) {
         this.description = description;
-        this.level = level;
-        this.blockedLoaction = blockedLoaction;
+        this.blockedLocation = blockedLoaction;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+
+    public boolean isBlockedLocation() {
+        return blockedLocation;
+    }
+
+    public void setBlockedLocation(boolean blockedLocation) {
+        this.blockedLocation = blockedLocation;
+    }
+
+   
+    public Actor getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor actor) {
+        this.actor = actor;
     }
 
     public String getDescription() {
@@ -36,28 +69,14 @@ public class Scene implements Serializable{
         this.description = description;
     }
 
-    public int getLevel() {
-        return level;
-    }
+   
 
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    public boolean isBlockedLoaction() {
-        return blockedLoaction;
-    }
-
-    public void setBlockedLoaction(boolean blockedLoaction) {
-        this.blockedLoaction = blockedLoaction;
-    }
 
     @Override
     public int hashCode() {
         int hash = 3;
         hash = 23 * hash + Objects.hashCode(this.description);
-        hash = 23 * hash + this.level;
-        hash = 23 * hash + (this.blockedLoaction ? 1 : 0);
+        hash = 23 * hash + (this.blockedLocation ? 1 : 0);
         return hash;
     }
 
@@ -73,10 +92,8 @@ public class Scene implements Serializable{
             return false;
         }
         final Scene other = (Scene) obj;
-        if (this.level != other.level) {
-            return false;
-        }
-        if (this.blockedLoaction != other.blockedLoaction) {
+       
+        if (this.blockedLocation != other.blockedLocation) {
             return false;
         }
         if (!Objects.equals(this.description, other.description)) {
@@ -87,8 +104,9 @@ public class Scene implements Serializable{
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + ", level=" + level + ", blockedLoaction=" + blockedLoaction + '}';
+        return "Scene{" + "description=" + description + ", symbol=" + symbol + ", blockedLocation=" + blockedLocation + '}';
     }
+
     
     
  }

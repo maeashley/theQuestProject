@@ -5,6 +5,7 @@
  */
 package byui.cit260.questGame.view;
 
+import byui.cit260.questGame.control.QuestionControl;
 import java.util.Scanner;
 
 public class RiddleView extends View {
@@ -12,7 +13,8 @@ public class RiddleView extends View {
    
     
     public RiddleView(){
-        super("Please enter the mass.");
+        super(QuestionControl.display());
+        
     }
 
     
