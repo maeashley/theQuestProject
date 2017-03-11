@@ -15,6 +15,14 @@ public class Map implements Serializable {
 
     private int buildingCount;
     private int floorCount;
+
+    public int getFloorCount() {
+        return floorCount;
+    }
+
+    public void setFloorCount(int floorCount) {
+        this.floorCount = floorCount;
+    }
     private int currentBuilding;
     private int currentFloor;
     private int currentScene;
