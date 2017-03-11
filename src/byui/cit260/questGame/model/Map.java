@@ -15,6 +15,14 @@ public class Map implements Serializable {
 
     private int buildingCount;
     private int floorCount;
+
+    public int getFloorCount() {
+        return floorCount;
+    }
+
+    public void setFloorCount(int floorCount) {
+        this.floorCount = floorCount;
+    }
     private int currentBuilding;
     private int currentFloor;
     private int currentScene;
@@ -25,6 +33,39 @@ public class Map implements Serializable {
         
        
     }
+    
+    public Map(int floor, int building)
+    {
+        
+        if (floor < 1 || building < 1)
+        {
+            System.out.println("The Number of Buldings and Floors myst be > 0");
+            return;
+        }
+        this.buildingCount = building;
+        this.floorCount = floor;
+        this.locations = new Location[this.floorCount][this.buildingCount];
+        
+        for(int i  = 0; i < floor; i++)
+        {       
+            for (int j = 0; j < building; j++){
+              Location location = new Location();
+              location.setBuilding(j);
+              location.setFloor(i);
+              location.setVisited(false);
+              
+              
+              locations[i][j] = location;
+                
+            }
+           
+        }
+       
+      
+    
+    
+    
+    }
 
     public Location[][] getLocations() {
         return locations;
@@ -34,10 +75,7 @@ public class Map implements Serializable {
         this.locations = locations;
     }
 
-    public Map(int buildingCount, int floorCount) {
-        this.buildingCount = buildingCount;
-        this.floorCount = floorCount;
-    }
+   
 
     public int getBuildingCount() {
         return buildingCount;

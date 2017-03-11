@@ -16,14 +16,26 @@ import byui.cit260.questGame.model.SceneType;
  * @author ashley
  */
 public class MapControl {
+
+    static void moveActorsToStartingLocation(Map map) {
+       
+    
+    
+    }
+    
+    
+    
     public int building;
     public int floor;
 
     public static Map createMap() {
         Map map = new Map(6,5);
         
+        Scene[] scene = createScenes();
         
-        System.out.println("Create Map Called");
+        GameControl.assignScenesToLocation(map, scene);
+        
+        
         return map;
     }
     
