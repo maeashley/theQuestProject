@@ -90,16 +90,16 @@ public class MapControl {
         scene = new Scene();
         scene.setSymbol("MA1");
         scene.setDescription("Welcome to Sister Baxter's class.");
-        scene.setBlockedLocation(true);
+        scene.setBlockedLocation(false);
         scene.setQuestion(questions[0]);
         //scene.setActor
-        scenes[SceneType.math1.ordinal()] = scene;
+        scenes[SceneType.mathematics1.ordinal()] = scene;
         
         //SCENE 8
         scene = new Scene();
         scene.setSymbol("R1");
         scene.setDescription("religion one");
-        scene.setBlockedLocation(false);
+        scene.setBlockedLocation(true);
         scene.setQuestion(questions[0]);
         //scene.setActor
         scenes[SceneType.religion1.ordinal()] = scene;
