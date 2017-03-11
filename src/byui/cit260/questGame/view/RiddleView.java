@@ -13,7 +13,7 @@ public class RiddleView extends View {
    
     
     public RiddleView(){
-        super(QuestionControl.display());
+        super();
         
     }
 

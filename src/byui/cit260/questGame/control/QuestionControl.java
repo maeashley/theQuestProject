@@ -20,19 +20,7 @@ public class QuestionControl {
     public QuestionControl(){
         
     }
-    public void display() {
-        boolean done = false;
-        do {
-            
-            String value = this.getInput();
-            if (value.toUpperCase().equals("Q")) {
-                return;
-            }
-
-          //  done = Question.getText();
-        } while (!done);
-
-    }
+    
     
     public static Question[] createReligiousQuestionList(){
         Question[] religion = new Question[10];
@@ -224,25 +212,7 @@ public static Question[] createMathQuestionList(){
         return side3;
     }
     
-    **/ 
+    ***/
 
- public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        boolean valid = false;
-        String value = null;
 
-        while (!valid) {
-           // System.out.println("\n" + this.promptMessage);
-
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) {
-                System.out.println("\n*** You must enter a value ***");
-                continue;
-            }
-            break;
-        }
-        return value;
-    }
 }

@@ -9,6 +9,7 @@ import byui.cit260.questGame.model.Backpack;
 import byui.cit260.questGame.model.Game;
 import byui.cit260.questGame.model.Map;
 import byui.cit260.questGame.model.Player;
+import byui.cit260.questGame.model.Scene;
 import thequest.TheQuest;
 
 /**
@@ -43,7 +44,9 @@ public class GameControl {
             
             }
             Map map = MapControl.createMap();
-            //Backpack backpack = BackpackControl.createBackPack();
+            
+            Backpack backpack = BackpackControl.createBackPack();
+            game.setBackpack(backpack);
             
             TheQuest.setCurrentGame(game);
             if(game.getPlayer() == null)
@@ -53,9 +56,15 @@ public class GameControl {
             }
           game.setNoPeople(1);
           game.setMap(map);
-          //game.setBackpack(backpack);
-           
-            
+          
+          
+          MapControl.moveActorsToStartingLocation(map);
+
+    }
+
+    static void assignScenesToLocation(Map map, Scene[] scene) {
+        
+    
     }
     
 }

@@ -16,14 +16,26 @@ import byui.cit260.questGame.model.SceneType;
  * @author ashley
  */
 public class MapControl {
+
+    static void moveActorsToStartingLocation(Map map) {
+       
+    
+    
+    }
+    
+    
+    
     public int building;
     public int floor;
 
     public static Map createMap() {
         Map map = new Map(6,5);
         
+        Scene[] scene = createScenes();
         
-        System.out.println("Create Map Called");
+        GameControl.assignScenesToLocation(map, scene);
+        
+        
         return map;
     }
     
@@ -93,7 +105,7 @@ public class MapControl {
         scene.setBlockedLocation(true);
         scene.setQuestion(questions[0]);
         //scene.setActor
-        scenes[SceneType.math1.ordinal()] = scene;
+        scenes[SceneType.mathematics1.ordinal()] = scene;
         
         //SCENE 8
         scene = new Scene();
