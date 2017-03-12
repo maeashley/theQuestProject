@@ -6,6 +6,7 @@
 package byui.cit260.questGame.view;
 
 import byui.cit260.questGame.control.GameControl;
+import byui.cit260.questGame.model.Location;
 import byui.cit260.questGame.model.Map;
 import java.util.Scanner;
 import thequest.TheQuest;
@@ -36,7 +37,7 @@ public class GameMenuView extends View {
 
         switch (value) {
             case "V":
-                this.map(new Map());
+                this.map();
                 break;
 
             case "Y":
@@ -76,20 +77,24 @@ public class GameMenuView extends View {
         helpMenu.display();
     }
 
-    private void map(Map map) {
+    private void map() {
+        
+      //  Location [][] l = map.getLocations();
+      
+      Location[][] location = null;
        System.out.println("      THE QUEST  ");
         System.out.println("    1   2   3   4   5");
-         for(int i  = 0; i < map.getBuildingCount(); i++)
+         for(int i  = 0; i < 6; i++)
         {   
             System.out.println("-----------------------");
             System.out.print(i + 1 + "| ");
-            for (int j = 0; j < map.getFloorCount(); j++){
+            for (int j = 0; j < 5; j++){
                 if(i == 5 && j== 0){
                 System.out.print(" S |");
                 }
                 else
                 {
-                     System.out.print(map.getLocations()[i][j]);
+                     System.out.print(" " + location[i][j] + " ");
                 }
             }
             System.out.println();
