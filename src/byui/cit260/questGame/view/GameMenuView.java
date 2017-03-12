@@ -40,7 +40,7 @@ public class GameMenuView extends View {
                 break;
 
             case "Y":
-                this.backPack();
+                this.backpack();
                 break;
 
             case "L":
@@ -62,8 +62,9 @@ public class GameMenuView extends View {
         return false;
     }
 
-    private void backPack() {
-       System.out.println("BackPack Option takes you to the BackPack Menu");
+    private void backpack() {
+       //BackpackMenuView menu = new BackpackMenuView();
+        //BackpackMenu.display();
     }
 
     private void location() {
