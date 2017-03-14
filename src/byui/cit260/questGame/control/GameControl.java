@@ -13,7 +13,6 @@ import byui.cit260.questGame.model.Scene;
 import thequest.TheQuest;
 
 /**
- *
  * @author ashley
  */
 public class GameControl {
@@ -66,5 +65,8 @@ public class GameControl {
         
     
     }
+    
+    
+    
     
 }

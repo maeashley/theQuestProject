@@ -14,8 +14,29 @@ public class Backpack implements Serializable{
     private int tokens;
     private int hints;
     private int guesses;
+    private int credits[];
+
+    public int getTokens() {
+        return tokens;
+    }
+
+    public void setTokens(int tokens) {
+        this.tokens = tokens;
+    }
+
+    public int[] getCredits() {
+        return credits;
+    }
+
+    public void setCredits(int credits[]) {
+        this.credits = credits;
+    }
 
     public Backpack() {
+        tokens = 5;
+        hints = 3;
+        guesses = 3;
+        credits = new int[30];
     }
     
 
@@ -70,4 +91,7 @@ public int getHints(){
         }
         return true;
     }
+    
+    
+     
 }

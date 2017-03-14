@@ -353,16 +353,5 @@ public class MapControl {
     
     
     }
-    
-    
-//    public static Location[] createLocations(){
-//        Location scene = new Location();
-//        
-//        Location religionBuilding = new Location();
-//        religionBuilding.setRow(1);
-//        religionBuilding.setColumn(1);
-//        
-//        
-//    }return scene;
-    
+
 }

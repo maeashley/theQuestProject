@@ -39,6 +39,10 @@ public class BackpackMenuView extends View {
             case "T":
                 this.tokens();
                 break;
+                
+            case "C":
+                this.credits();
+                break;
           
             default:
                 System.out.println("\n***Invalid selection *** Try again");
@@ -58,5 +62,17 @@ public class BackpackMenuView extends View {
     private void tokens() {
         System.out.println("You do not have any tokens.");
 }
+
+    private void credits() {
+       
+       
+       System.out.print("Credits Earned: ");
+       
+       System.out.print("Credits Still needed: ");
+
+    }
+    
+    
+  
 
 }

@@ -18,13 +18,14 @@ public class BackpackControl {
         return backpack;
     }
     
-}
 
-/*
 
-for (i=0; i,list.length-1; i++){
-    if([i]==value){
-        return i;
+ public int sumCredits(int array[]){
+        int sum = 0;
+        for(int a: array){
+            sum += a;
+        }
+        return sum;
     }
+ 
 }
-*/
