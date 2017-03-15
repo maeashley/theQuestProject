@@ -95,7 +95,7 @@ public void displayMap() {
     System.out.print("  |");
     for( int column = 0; column < locations[0].length; column++){
       // print col numbers to side of map
-      System.out.print("  " + column + " |"); 
+      System.out.print("  " + column + "  |"); 
     }
     // Now build the map.  For each row, show the column information
     System.out.println();
@@ -119,12 +119,16 @@ public void displayMap() {
         if(locations[row][column].getScene() == null)
         {
              // No scene assigned here so use ?? for the symbol
-             System.out.print(leftIndicator + "??" + rightIndicator);
+             System.out.print(leftIndicator + " ??" + rightIndicator);
         }
-        else
-          System.out.print(leftIndicator
+        else{
+            String strSpace = "";
+            if(locations[row][column].getScene().getSymbol().length()==2)
+                strSpace = " ";
+          System.out.print(strSpace + leftIndicator
              + locations[row][column].getScene().getSymbol()
              + rightIndicator);
+        }
       }
      System.out.println("|");
     }
