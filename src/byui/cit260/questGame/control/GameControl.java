@@ -5,6 +5,7 @@
  */
 package byui.cit260.questGame.control;
 
+import byui.cit260.questGame.model.Actor;
 import byui.cit260.questGame.model.Backpack;
 import byui.cit260.questGame.model.Game;
 import byui.cit260.questGame.model.Map;
@@ -65,7 +66,16 @@ public class GameControl {
         
     
     }
-    
+    public static Actor searchForActor(String name) {
+
+        for (Actor actor : Actor.values()) {
+            if (actor.getName() == null ? name == null : actor.getName().equals(name)) {
+                return actor;
+            }
+
+        }
+        return null;
+    }   
     
     
     

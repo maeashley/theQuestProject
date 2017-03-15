@@ -6,6 +6,7 @@
 package byui.cit260.questGame.view;
 
 import byui.cit260.questGame.control.GameControl;
+import byui.cit260.questGame.model.Actor;
 import byui.cit260.questGame.model.Location;
 import byui.cit260.questGame.model.Map;
 import java.util.Scanner;
@@ -22,6 +23,7 @@ public class GameMenuView extends View {
         super ( "\n ----- Game Menu ------\n"
                 + "V – View Map\n"
                 + "B - BackPack Contents   \n"
+                + "A - Look for an actor\n"
                 + "L – Current Location\n"
                 + "R - View a Riddle\n"
                 + "H - Help \n"
@@ -38,6 +40,10 @@ public class GameMenuView extends View {
         switch (value) {
             case "V":
                 this.map();
+                break;
+                
+                case "A":
+                this.getActor();
                 break;
 
             case "Y":
@@ -114,6 +120,27 @@ public class GameMenuView extends View {
         riddle.display();
     }
     
+private void getActor() {
+        
+        String savePrompt = this.promptMessage;
+        this.promptMessage = "Please enter an actor's first name.";
 
+        String searchActor = getInput();
+        if (searchActor.length()>2){
+            Actor actor = GameControl.searchForActor(searchActor);
+            if(actor != null){
+                System.out.println("Actor: " + actor.getName()+" - " + actor.getDescription());
+            }
+            else{
+                System.out.println("Actor not found.");
+            }
+        }
+        else{
+            System.out.println("Invalid input");
+        }
+            this.promptMessage = savePrompt;
+        
+        
+    }
     
 }
