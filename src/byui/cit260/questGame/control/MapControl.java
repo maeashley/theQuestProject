@@ -18,20 +18,29 @@ import byui.cit260.questGame.model.SceneType;
  */
 public class MapControl {
 
-    static void moveActorsToStartingLocation(Map map) {
-       
-    }
+    public static void movePlayerToStartingLocation(Map map) {
+     // If starting location is not supposed to be 0,0 then use the correct values here.
+     movePlayer(map, 0, 0);
+}
+
+public static void movePlayer(Map map, int row, int column) {
+   map.setCurrentLocation(map.getLocations()[row][column]);
+   map.getCurrentLocation().setVisited(true);
+   map.setCurrentFloor(row);
+   map.setCurrentBuilding(column);
+
+}
     
     
     public int building;
     public int floor;
 
     public static Map createMap() {
-        Map map = new Map(6,5);
+        Map map = new Map(5,6);
         
         Scene[] scene = createScenes();
         
-        GameControl.assignScenesToLocation(map, scene);
+       assignScenesToLocations(map, scene);
         
         
         return map;

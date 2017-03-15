@@ -15,6 +15,35 @@ public class Map implements Serializable {
 
     private int buildingCount;
     private int floorCount;
+    private int currentBuilding;
+    private int currentFloor;
+    private int currentScene;
+    private Location currentLocation;
+
+    public int getCurrentFloor() {
+        return currentFloor;
+    }
+
+    public void setCurrentFloor(int currentFloor) {
+        this.currentFloor = currentFloor;
+    }
+
+    public int getCurrentScene() {
+        return currentScene;
+    }
+
+    public void setCurrentScene(int currentScene) {
+        this.currentScene = currentScene;
+    }
+    
+
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
 
     public int getFloorCount() {
         return floorCount;
@@ -23,9 +52,7 @@ public class Map implements Serializable {
     public void setFloorCount(int floorCount) {
         this.floorCount = floorCount;
     }
-    private int currentBuilding;
-    private int currentFloor;
-    private int currentScene;
+    
 
     private Location[][] locations;
 

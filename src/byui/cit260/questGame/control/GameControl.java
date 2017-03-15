@@ -5,6 +5,7 @@
  */
 package byui.cit260.questGame.control;
 
+import static byui.cit260.questGame.control.MapControl.movePlayerToStartingLocation;
 import byui.cit260.questGame.model.Actor;
 import byui.cit260.questGame.model.Backpack;
 import byui.cit260.questGame.model.Game;
@@ -58,14 +59,11 @@ public class GameControl {
           game.setMap(map);
           
           
-          MapControl.moveActorsToStartingLocation(map);
+          MapControl.movePlayerToStartingLocation(map);
 
     }
 
-    static void assignScenesToLocation(Map map, Scene[] scene) {
-        
     
-    }
     public static Actor searchForActor(String name) {
 
         for (Actor actor : Actor.values()) {
