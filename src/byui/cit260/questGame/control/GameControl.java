@@ -6,6 +6,7 @@
 package byui.cit260.questGame.control;
 
 import static byui.cit260.questGame.control.MapControl.movePlayerToStartingLocation;
+import byui.cit260.questGame.exceptions.GameControlException;
 import byui.cit260.questGame.model.Actor;
 import byui.cit260.questGame.model.Backpack;
 import byui.cit260.questGame.model.Game;
@@ -19,9 +20,10 @@ import thequest.TheQuest;
  */
 public class GameControl {
 
-    public static Player createPlayer(String playersName) {
+    public static Player createPlayer(String playersName) throws GameControlException {
         if (playersName == null){
-            return null;
+            throw new GameControlException("You must enter a"
+                    + "valid Player name.");
             
         }
         
