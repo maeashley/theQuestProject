@@ -5,12 +5,15 @@
  */
 package byui.cit260.questGame.control;
 
+import byui.cit260.questGame.exceptions.MapControlException;
 import byui.cit260.questGame.model.Actor;
 import byui.cit260.questGame.model.Location;
 import byui.cit260.questGame.model.Map;
+import byui.cit260.questGame.model.Player;
 import byui.cit260.questGame.model.Question;
 import byui.cit260.questGame.model.Scene;
 import byui.cit260.questGame.model.SceneType;
+import thequest.TheQuest;
 
 /**
  *
@@ -23,7 +26,32 @@ public class MapControl {
      movePlayer(map, 0, 0);
 }
 
-public static void movePlayer(Map map, int row, int column) {
+    
+    public static int movePlayerToLocation(Player player,  Location location)
+    throws MapControlException
+    {
+        Map map = TheQuest.getCurrentGame().getMap();
+        
+        
+        int newFloor = location.getFloor()-1;
+        int newBuilding = location.getBuilding()-1;
+        
+        if (newFloor < 0 || newFloor >= map.getCurrentFloor() || 
+                newBuilding < 0 || newBuilding >= map.getCurrentBuilding())
+        {
+           
+            throw new MapControlException("Cannot Move Actorto location "
+            + location.getFloor() + ", " + location.getBuilding()
+            + " because that location is outside "
+            + "the bounds of the Map.");
+        }
+        
+     
+        return 0;
+    }
+
+    
+   public static void movePlayer(Map map, int row, int column) {
    map.setCurrentLocation(map.getLocations()[row][column]);
    map.getCurrentLocation().setVisited(true);
    map.setCurrentFloor(row);
