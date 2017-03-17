@@ -32,10 +32,7 @@ public class GameControl {
         
         TheQuest.setPlayer(player);
         
-        
-        return player;
-        
-    
+    return player;
     }
 
     public static void createNewGame(Player player) {
