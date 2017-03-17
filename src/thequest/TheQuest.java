@@ -45,9 +45,7 @@ public class TheQuest {
     
     // MAIN CLASS
     public static void main(String[] args) {
-        
-        
-        
+
         StartProgramView startMenu = new StartProgramView();
         String name = startMenu.getPlayerName();
         
