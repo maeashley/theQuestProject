@@ -5,6 +5,7 @@
  */
 package thequest;
 
+import byui.cit260.questGame.exceptions.GameControlException;
 import byui.cit260.questGame.model.DiplomaPiece;
 import byui.cit260.questGame.model.Riddle;
 import byui.cit260.questGame.model.Player;
@@ -44,16 +45,22 @@ public class TheQuest {
     
     
     // MAIN CLASS
-    public static void main(String[] args) {
-        
-        
-        
+    public static void main(String[] args) throws GameControlException {
+
         StartProgramView startMenu = new StartProgramView();
+        
         String name = startMenu.getPlayerName();
         
-        startMenu.doAction(name);
-       
-     
+        try {
+
+            startMenu.doAction(name);
+
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startMenu.doAction(name);
+
+        }
     }
   
     public static void setPlayer(Player playerObj) {
