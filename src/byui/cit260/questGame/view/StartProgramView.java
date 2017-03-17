@@ -6,8 +6,11 @@
 package byui.cit260.questGame.view;
 
 import byui.cit260.questGame.control.GameControl;
+import byui.cit260.questGame.exceptions.GameControlException;
 import byui.cit260.questGame.model.Player;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -70,14 +73,16 @@ public class StartProgramView{
     
     
  
-    public boolean doAction(String value) {
+    public boolean doAction(String value) throws GameControlException {
     
-        Player player = GameControl.createPlayer(value);
-        
-        if (player== null){
-            System.out.println("\nError creating the player.");
-            return false;
+        Player player;
+        try {
+            player = GameControl.createPlayer(value);
+        } catch (GameControlException ex) {
+            System.out.println(ex.getMessage());
+            player = GameControl.createPlayer(value);
         }
+        
         
         //display next view
         this.displayNextView(player);
