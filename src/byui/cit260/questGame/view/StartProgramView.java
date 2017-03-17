@@ -6,6 +6,7 @@
 package byui.cit260.questGame.view;
 
 import byui.cit260.questGame.control.GameControl;
+import byui.cit260.questGame.exceptions.GameControlException;
 import byui.cit260.questGame.model.Player;
 import java.util.Scanner;
 
@@ -70,7 +71,7 @@ public class StartProgramView{
     
     
  
-    public boolean doAction(String value) {
+    public boolean doAction(String value) throws GameControlException {
     
         Player player = GameControl.createPlayer(value);
         
