@@ -151,6 +151,8 @@ public void displayMap() {
       }
      System.out.println("|");
     }
+    System.out.println("\nCurrent Location: " + map.getCurrentLocation().getScene().getDescription());
+
  }
     
     
