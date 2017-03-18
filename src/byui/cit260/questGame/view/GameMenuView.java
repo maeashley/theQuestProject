@@ -5,8 +5,12 @@
  */
 package byui.cit260.questGame.view;
 
+import byui.cit260.questGame.control.BackpackControl;
 import byui.cit260.questGame.control.GameControl;
+import byui.cit260.questGame.control.MapControl;
+import byui.cit260.questGame.exceptions.MapControlException;
 import byui.cit260.questGame.model.Actor;
+import byui.cit260.questGame.model.Backpack;
 import byui.cit260.questGame.model.Game;
 import byui.cit260.questGame.model.Location;
 import byui.cit260.questGame.model.Map;
@@ -23,7 +27,8 @@ public class GameMenuView extends View {
     public GameMenuView() {
         super ( "\n ----- Game Menu ------\n"
                 + "V – View Map\n"
-                + "B - BackPack Contents   \n"
+                + "M - Move to New Location\n"
+                + "B - Test BackPack Contents   \n"
                 + "A - Look for an actor\n"
                 + "L – Current Location\n"
                 + "R - View a Riddle\n"
@@ -62,7 +67,10 @@ public class GameMenuView extends View {
             case "R":
                 this.riddle();
                 break;
-            
+              
+            case "M":
+                this.movePlayer();
+                break;
             default:
                 System.out.println("\n***Invalid selection *** Try again");
                 break;
@@ -71,8 +79,19 @@ public class GameMenuView extends View {
     }
 
     private void backpack() {
-       //BackpackMenuView menu = new BackpackMenuView();
-        //BackpackMenu.display();
+        
+        Game game = TheQuest.getCurrentGame(); 
+        Backpack backpack = game.getBackpack();
+        
+        // THIS IS JUST  A TEST TO ADD # CREDITS TO THE BACKPACK
+        backpack.addCredits(3);
+        backpack.addCredits(4);
+        backpack.addCredits(2);
+        backpack.addCredits(8);
+        
+        int sum = BackpackControl.sumCredits(backpack.getCredits());
+        
+        System.out.println("Sum of Credits: " + sum);
     }
 
     private void location() {
@@ -195,6 +214,32 @@ private void getActor() {
             this.promptMessage = savePrompt;
         
         
+    }
+
+    private void movePlayer() {
+         int building;
+         int floor;
+         
+         building = getInt("Enter the Building Number. 0 - 4.  (-1 to Cancel).");
+         if (building == -1)
+             return;
+         floor = getInt("Enter the Floor Number. 0 - 5  (-1 to Cancel).");    
+         if (floor == -1)
+             return;
+           Game game = TheQuest.getCurrentGame(); // retreive the game
+            Map map = game.getMap(); // retreive the map from game
+         
+        try
+        {
+            MapControl.movePlayer(map, floor, building);
+        }
+        catch(MapControlException ex)
+        {
+       
+            System.out.println(ex.getMessage());
+         
+        }
+         displayMap();
     }
     
 }

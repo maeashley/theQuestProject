@@ -5,7 +5,9 @@
  */
 package byui.cit260.questGame.model;
 
+
 import java.io.Serializable;
+import java.util.ArrayList;
 /**
  *
  * @author ashley
@@ -14,7 +16,7 @@ public class Backpack implements Serializable{
     private int tokens;
     private int hints;
     private int guesses;
-    private int credits[];
+    private ArrayList<Integer> credits;
 
     public int getTokens() {
         return tokens;
@@ -24,19 +26,20 @@ public class Backpack implements Serializable{
         this.tokens = tokens;
     }
 
-    public int[] getCredits() {
+    public  ArrayList<Integer>  getCredits() {
         return credits;
     }
 
-    public void setCredits(int credits[]) {
-        this.credits = credits;
+    public void addCredits( int  credit) {
+        this.credits.add(credit);
+        
     }
 
     public Backpack() {
         tokens = 5;
         hints = 3;
         guesses = 3;
-        credits = new int[30];
+        credits = new ArrayList<Integer>();    // Make it array List
     }
     
 

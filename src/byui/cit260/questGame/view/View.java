@@ -58,5 +58,32 @@ public abstract class View implements ViewInterface {
         }
         return value;
     }
+    
+    
+    public int getInt(String prompt)
+    {
+        Scanner keyboard = new Scanner(System.in);
+        int number = 0;
+        String value = "";
+        
+        while (number == 0)
+        {
+            System.out.println(prompt);
+            value = keyboard.nextLine();
+            value = value.trim();
+            
+            try{
+                number = Integer.parseInt(value);
+            }
+            catch(NumberFormatException ex){
+                 System.out.println("Invalid Entry, You must enter a Integer");
+                number = 0;
+            }
+            
+        }
+        return number;
+    }
+    
+    // BUILD THE PARSE FUNCTIONS
 
 }

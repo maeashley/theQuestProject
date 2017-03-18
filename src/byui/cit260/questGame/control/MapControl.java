@@ -23,35 +23,54 @@ public class MapControl {
 
     public static void movePlayerToStartingLocation(Map map) {
      // If starting location is not supposed to be 0,0 then use the correct values here.
-     movePlayer(map, 0, 0);
+     try
+     {
+         movePlayer(map, 0, 0);
+     }
+     catch(MapControlException ex){
+        // PROBLEM 
+         
+     }
 }
 
     
-    public static int movePlayerToLocation(Player player,  Location location)
-    throws MapControlException
-    {
-        Map map = TheQuest.getCurrentGame().getMap();
-        
-        
-        int newFloor = location.getFloor()-1;
-        int newBuilding = location.getBuilding()-1;
-        
-        if (newFloor < 0 || newFloor >= map.getCurrentFloor() || 
-                newBuilding < 0 || newBuilding >= map.getCurrentBuilding())
-        {
-           
-            throw new MapControlException("Cannot Move Actorto location "
-            + location.getFloor() + ", " + location.getBuilding()
-            + " because that location is outside "
-            + "the bounds of the Map.");
-        }
-        
-     
-        return 0;
-    }
+//    public static int movePlayerToLocation(Player player,  Location location)
+//    throws MapControlException
+//    {
+//        Map map = TheQuest.getCurrentGame().getMap();
+//        
+//        
+//        int newFloor = location.getFloor()-1;
+//        int newBuilding = location.getBuilding()-1;
+//        
+//        if (newFloor < 0 || newFloor >= map.getCurrentFloor() || 
+//                newBuilding < 0 || newBuilding >= map.getCurrentBuilding())
+//        {
+//           
+//            throw new MapControlException("Cannot Move Actorto location "
+//            + location.getFloor() + ", " + location.getBuilding()
+//            + " because that location is outside "
+//            + "the bounds of the Map.");
+//        }
+//        
+//     
+//        return 0;
+//    }
 
     
-   public static void movePlayer(Map map, int row, int column) {
+   public static void movePlayer(Map map, int row, int column)
+   throws MapControlException
+   {
+       if (row < 0 || row > map.getFloorCount())
+       {
+        throw new MapControlException("Invalid FLoor Number. FLoor should be between 0 and "
+                + map.getFloorCount());  
+       }
+       if (column < 0 || column > map.getBuildingCount())
+       {
+           throw new MapControlException("Invalid Building Number. FLoor should be between 0 and "
+                + map.getBuildingCount()); 
+       }
    map.setCurrentLocation(map.getLocations()[row][column]);
    map.getCurrentLocation().setVisited(true);
    map.setCurrentFloor(row);
@@ -386,9 +405,7 @@ public class MapControl {
     locations[4][3].setScene(scenes[SceneType.music3.ordinal()]);
     locations[4][4].setScene(scenes[SceneType.music4.ordinal()]);
     locations[4][5].setScene(scenes[SceneType.music5.ordinal()]);
-    
-    
-    
+
     }
 
 }

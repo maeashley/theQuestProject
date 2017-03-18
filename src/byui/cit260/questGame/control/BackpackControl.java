@@ -6,6 +6,7 @@
 package byui.cit260.questGame.control;
 
 import byui.cit260.questGame.model.Backpack;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,7 +21,7 @@ public class BackpackControl {
     
 
 
- public int sumCredits(int array[]){
+ static public int sumCredits(ArrayList<Integer>  array){
         int sum = 0;
         for(int a: array){
             sum += a;
