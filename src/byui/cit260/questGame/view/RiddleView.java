@@ -7,42 +7,41 @@ package byui.cit260.questGame.view;
 
 import byui.cit260.questGame.control.QuestionControl;
 import java.util.Scanner;
+import byui.cit260.questGame.exceptions.QuestionControlException;
 
 public class RiddleView extends View {
 
-   
-    
-    public RiddleView(){
+    public RiddleView() {
         super();
-        
+
     }
 
-    
-    
     @Override
-     public boolean doAction(String value) {
-        boolean valid = false;
-        int massValue = Integer.parseInt(value);
-
-        while (!valid) {
-            System.out.println("Please enter the mass.");
-
-            if (massValue < 1) {
-                System.out.println("\nInvalid value: value cannot be a"
-                        + "negative integer");
-                return false;
-            } else if (massValue > 5000) {
-                System.out.println("You have entered an invalid number."
-                        + "Do not use values larger than 5000.");
-                return false;
-            } else {
-                System.out.println("You have entered a valid mass.");
-                valid = true;
-            }
-
-        }
-        
+    public boolean doAction(String value) {
+        ///
         return true;
     }
+
+    public boolean getMass()
+            throws QuestionControlException {
+        boolean valid = false;
+        int massValue = getInt("Please enter the mass.");
+
+        if (massValue < 1) {
+            throw new QuestionControlException("\nInvalid value: value cannot be a negative integer");
+
+        } else if (massValue > 5000) {
+            System.out.println("You have entered an invalid number."
+                    + "Do not use values larger than 5000.");
+            return false;
+        } else {
+            System.out.println("You have entered a valid mass.");
+            valid = true;
+        }
+        
+        return valid;
+
+    }
+
 
 }

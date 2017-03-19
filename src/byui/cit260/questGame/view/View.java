@@ -83,7 +83,6 @@ public abstract class View implements ViewInterface {
         }
         return number;
     }
-    
     // BUILD THE PARSE FUNCTIONS
 
 }
