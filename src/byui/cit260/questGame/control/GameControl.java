@@ -22,8 +22,7 @@ public class GameControl {
 
     public static Player createPlayer(String playersName) throws GameControlException {
         if (playersName == null){
-            throw new GameControlException("You must enter a"
-                    + "valid Player name.");
+            throw new GameControlException("You must enter a valid Player name.");
             
         }
         

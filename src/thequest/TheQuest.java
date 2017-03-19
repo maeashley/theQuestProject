@@ -19,7 +19,6 @@ import byui.cit260.questGame.view.RiddleView;
 import byui.cit260.questGame.view.StartProgramView;
 import java.util.ArrayList;
 
-
 public class TheQuest {
 
     /**
@@ -35,22 +34,18 @@ public class TheQuest {
     public static void setCurrentGame(Game currentGame) {
         TheQuest.currentGame = currentGame;
     }
-      
 
     public static Player getPlayer() {
         return player;
     }
-      
-    
-    
-    
+
     // MAIN CLASS
     public static void main(String[] args) throws GameControlException {
 
         StartProgramView startMenu = new StartProgramView();
-        
+
         String name = startMenu.getPlayerName();
-        
+
         try {
 
             startMenu.doAction(name);
@@ -62,7 +57,7 @@ public class TheQuest {
 
         }
     }
-  
+
     public static void setPlayer(Player playerObj) {
         player = playerObj;
     }

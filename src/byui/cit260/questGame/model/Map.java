@@ -87,11 +87,8 @@ public class Map implements Serializable {
             }
            
         }
-       
-      
     
-    
-    
+
     }
 
     public Location[][] getLocations() {
