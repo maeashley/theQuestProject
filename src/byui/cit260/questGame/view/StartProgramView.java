@@ -92,8 +92,8 @@ public class StartProgramView{
         try {
             player = GameControl.createPlayer(value);
         } catch (GameControlException ex) {
-            System.out.println(ex.getMessage());
-            player = GameControl.createPlayer(value);
+             ErrorView.display(this.getClass().getName(),ex.getMessage());
+             player = GameControl.createPlayer(value);
         }
         
         

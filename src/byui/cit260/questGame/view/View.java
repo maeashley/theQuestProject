@@ -59,7 +59,7 @@ public abstract class View implements ViewInterface {
             }
             catch(Exception ex)
             {
-                System.out.println("Invalid Input!");
+                ErrorView.display(this.getClass().getName(),ex.getMessage());
             }
             value = value.trim();
 
@@ -88,7 +88,7 @@ public abstract class View implements ViewInterface {
             }
             catch(Exception ex)
             {
-                System.out.println("Invalid Input!");
+                ErrorView.display(this.getClass().getName(),ex.getMessage());
             }
             value = value.trim();
             
@@ -96,7 +96,7 @@ public abstract class View implements ViewInterface {
                 number = Integer.parseInt(value);
             }
             catch(NumberFormatException ex){
-                 System.out.println("Invalid Entry, You must enter a Integer");
+                 ErrorView.display(this.getClass().getName(),"Invalid Entry, You must enter a Integer");
                 number = 0;
             }
             

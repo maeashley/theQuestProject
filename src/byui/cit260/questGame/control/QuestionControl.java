@@ -6,6 +6,7 @@
 package byui.cit260.questGame.control;
 
 import byui.cit260.questGame.model.Question;
+import byui.cit260.questGame.view.ErrorView;
 import java.lang.Math;
 import java.util.Scanner;
 import java.io.FileReader;
@@ -53,15 +54,14 @@ public class QuestionControl {
             // Always close files.
             bufferedReader.close();
         } catch (FileNotFoundException ex) {
-            System.out.println(
-                    "Unable to open file '"
+            
+            ErrorView.display("QuestionControl","Unable to open file '"
                     + fileName + "'");
+          
         } catch (IOException ex) {
-            System.out.println(
-                    "Error reading file '"
+             ErrorView.display("QuestionControl","Error reading file '"
                     + fileName + "'");
-            // Or we could just do this: 
-            // ex.printStackTrace();
+            
         }
     }
 

@@ -238,7 +238,7 @@ private void getActor() {
         catch(MapControlException ex)
         {
        
-            System.out.println(ex.getMessage());
+             ErrorView.display(this.getClass().getName(),ex.getMessage());
          
         }
          displayMap();

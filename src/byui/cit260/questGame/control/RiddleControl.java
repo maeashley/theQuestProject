@@ -6,6 +6,7 @@
 package byui.cit260.questGame.control;
 
 import byui.cit260.questGame.exceptions.QuestionControlException;
+import byui.cit260.questGame.view.ErrorView;
 import byui.cit260.questGame.view.RiddleView;
 
 /**
@@ -26,7 +27,7 @@ public class RiddleControl {
             
         }catch(QuestionControlException ex)
         {
-        System.out.println(ex);
+        ErrorView.display(this.getClass().getName(),ex.getMessage());
         }
     }
     
