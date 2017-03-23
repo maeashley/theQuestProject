@@ -3,14 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+ 
 package byui.cit260.questGame.view;
-
 import byui.cit260.questGame.control.GameControl;
 import byui.cit260.questGame.exceptions.GameControlException;
 import byui.cit260.questGame.model.Player;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import thequest.TheQuest;
 
 /**
  *
@@ -19,6 +23,8 @@ import java.util.logging.Logger;
 public class StartProgramView{
     //private String promptMessage;
     private String prompt;
+    private BufferedReader keyboard = TheQuest.getInFile();
+    private PrintWriter console = TheQuest.getOutFile();
    
     public StartProgramView(){
           prompt = "Enter your Name: ";
@@ -49,13 +55,20 @@ public class StartProgramView{
   
 
     public String getPlayerName() {
-        Scanner keyboard = new Scanner(System.in);
+      //  Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
         
         while (!valid){
             System.out.println("\n" + prompt);
-            value = keyboard.nextLine();
+            try
+            {
+                value = keyboard.readLine();
+            }
+            catch(Exception ex)
+            {
+                System.out.println("Invalid Input!");
+            }
             value = value.trim();
             valid = true;
             if (value.length()<2){
@@ -72,7 +85,7 @@ public class StartProgramView{
 
     
     
- 
+
     public boolean doAction(String value) throws GameControlException {
     
         Player player;

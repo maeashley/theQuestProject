@@ -46,14 +46,21 @@ public abstract class View implements ViewInterface {
 
     @Override
     public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
+        //Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
         String value = null;
 
         while (!valid) {
             System.out.println("\n" + this.promptMessage);
 
-            value = keyboard.nextLine();
+            try
+            {
+                value = keyboard.readLine();
+            }
+            catch(Exception ex)
+            {
+                System.out.println("Invalid Input!");
+            }
             value = value.trim();
 
             if (value.length() < 1) {
@@ -68,14 +75,21 @@ public abstract class View implements ViewInterface {
     
     public int getInt(String prompt)
     {
-        Scanner keyboard = new Scanner(System.in);
+       // Scanner keyboard = new Scanner(System.in);
         int number = 0;
         String value = "";
         
         while (number == 0)
         {
             System.out.println(prompt);
-            value = keyboard.nextLine();
+            try
+            {
+                value = keyboard.readLine();
+            }
+            catch(Exception ex)
+            {
+                System.out.println("Invalid Input!");
+            }
             value = value.trim();
             
             try{

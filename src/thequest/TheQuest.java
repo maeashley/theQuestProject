@@ -6,18 +6,9 @@
 package thequest;
 
 import byui.cit260.questGame.exceptions.GameControlException;
-import byui.cit260.questGame.model.DiplomaPiece;
-import byui.cit260.questGame.model.Riddle;
 import byui.cit260.questGame.model.Player;
-import byui.cit260.questGame.model.Location;
-import byui.cit260.questGame.model.Actor;
-import byui.cit260.questGame.model.Scene;
-import byui.cit260.questGame.model.Map;
-import byui.cit260.questGame.model.Backpack;
 import byui.cit260.questGame.model.Game;
-import byui.cit260.questGame.view.RiddleView;
 import byui.cit260.questGame.view.StartProgramView;
-import java.util.ArrayList;
 import java.io.PrintWriter;
 import java.io.BufferedReader;
 import java.io.IOException;
