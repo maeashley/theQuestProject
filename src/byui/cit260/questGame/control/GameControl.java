@@ -13,7 +13,9 @@ import byui.cit260.questGame.model.Game;
 import byui.cit260.questGame.model.Map;
 import byui.cit260.questGame.model.Player;
 import byui.cit260.questGame.model.Scene;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import thequest.TheQuest;
 
@@ -87,7 +89,25 @@ public class GameControl {
     
  
     }
-    
+
+    public static void getSavedGame(String filePath)
+    throws GameControlException{
+        Game game = null;
+        
+        try(FileInputStream fips = new FileInputStream(filePath)){
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();
+        
+        }
+        catch(Exception ex){
+            throw new GameControlException(ex.getMessage());
+        }
+        
+        TheQuest.setCurrentGame(game);
+        
+    }
+   
     
     
 }

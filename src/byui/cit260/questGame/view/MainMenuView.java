@@ -9,14 +9,13 @@ import thequest.TheQuest;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 public class MainMenuView extends View {
 
     //private String promptMessage;
-     private String menu;
+    private String menu;
 
     public MainMenuView() {
-        super( "\n"
+        super("\n"
                 + "\n-------------------"
                 + "\n| Main Menu        |"
                 + "\n-------------------"
@@ -25,17 +24,16 @@ public class MainMenuView extends View {
                 + "\nH- Get help on how to play the game"
                 + "\nS- Save game"
                 + "\nQ- Quit"
-                + "\n---------------------" 
+                + "\n---------------------"
                 + "\nEnter the option:"
-                );
+        );
     }
 
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase();
 
-        switch (value) 
-        {
+        switch (value) {
             case "N":
                 this.startNewGame();
                 break;
@@ -61,28 +59,38 @@ public class MainMenuView extends View {
 
     private void startNewGame() {
         GameControl.createNewGame(TheQuest.getPlayer());
-        
-        
-        
+
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
-        
-        
+
     }
 
     private void startExistingGame() {
-        this.console.println("StartExistingGame");
+        this.console.println("\n\nEnter the file Path for the file where the Game"
+                + " is saved.");
+
+        String filePath = this.getInput();
+
+        try {
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display(this.getClass().getName(),
+                    "Error Retrieving game from file: '" + filePath + "'");
+        }
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void saveGame() {
         this.console.println("\n\nEnter the file path for file where the game"
                 + "is to be saved");
-        
+
         String filePath = this.getInput();
-        
-        try{
+
+        try {
             GameControl.saveGame(TheQuest.getCurrentGame(), filePath);
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
     }
@@ -91,8 +99,5 @@ public class MainMenuView extends View {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
-        
-    
-   }
 
-
+}
