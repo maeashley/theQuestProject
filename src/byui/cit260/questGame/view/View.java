@@ -5,7 +5,10 @@
  */
 package byui.cit260.questGame.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import thequest.TheQuest;
 
 /**
  *
@@ -14,6 +17,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
 
     protected String promptMessage;
+    
+    protected final BufferedReader keyboard = TheQuest.getInFile();
+    protected final PrintWriter console = TheQuest.getOutFile();
     
 
     public View() {
