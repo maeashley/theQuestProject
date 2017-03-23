@@ -18,6 +18,9 @@ import byui.cit260.questGame.model.Game;
 import byui.cit260.questGame.view.RiddleView;
 import byui.cit260.questGame.view.StartProgramView;
 import java.util.ArrayList;
+import java.io.PrintWriter;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class TheQuest {
 
@@ -26,6 +29,9 @@ public class TheQuest {
      */
     private static Game currentGame;
     private static Player player;
+    
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
 
     public static Game getCurrentGame() {
         return currentGame;
@@ -41,12 +47,17 @@ public class TheQuest {
 
     // MAIN CLASS
     public static void main(String[] args) throws GameControlException {
-
+    
+        try {
+            
+            TheQuest.inFile = new BufferedReader(new InputStreamReader(System.in));
+            TheQuest.outFile = new PrintWriter(System.out, true);
+            
         StartProgramView startMenu = new StartProgramView();
 
         String name = startMenu.getPlayerName();
 
-        try {
+        
 
             startMenu.doAction(name);
 
@@ -56,10 +67,31 @@ public class TheQuest {
             startMenu.doAction(name);
 
         }
+        finally {
+            TheQuest.inFile.close();
+            TheQuest.outFile.close();
+        }
     }
 
     public static void setPlayer(Player playerObj) {
         player = playerObj;
+        
+    }
+    
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+    
+    public static void setOutFile(PrintWriter outfile){
+        TheQuest.outFile = outFile;
+    }
+    
+    public static BufferedReader getInFile(){
+        return inFile;
+    }
+    
+    public static void setInFile(BufferedReader inFile){
+        TheQuest.inFile = inFile;
     }
 
 }
