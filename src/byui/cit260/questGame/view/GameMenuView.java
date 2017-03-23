@@ -72,7 +72,7 @@ public class GameMenuView extends View {
                 this.movePlayer();
                 break;
             default:
-                System.out.println("\n***Invalid selection *** Try again");
+                this.console.println("\n***Invalid selection *** Try again");
                 break;
         }
         return false;
@@ -91,11 +91,11 @@ public class GameMenuView extends View {
         
         int sum = BackpackControl.sumCredits(backpack.getCredits());
         
-        System.out.println("Sum of Credits: " + sum);
+        this.console.println("Sum of Credits: " + sum);
     }
 
     private void location() {
-       System.out.println("Location takes you the Menu for your current Location"
+       this.console.println("Location takes you the Menu for your current Location"
                + "Provides options to solve riddle and Helps options in the BackPack");
     }
 
@@ -111,15 +111,15 @@ public void displayMap() {
   Map map = game.getMap(); // retreive the map from game
   Location[][] locations = map.getLocations(); // retreive the locations from map
     // Build the heading of the map
-    System.out.print("  |");
+    this.console.print("  |");
     for( int column = 0; column < locations[0].length; column++){
       // print col numbers to side of map
-      System.out.print("  " + column + "  |"); 
+      this.console.print("  " + column + "  |"); 
     }
     // Now build the map.  For each row, show the column information
-    System.out.println();
+    this.console.println();
     for( int row = 0; row < locations.length; row++){
-     System.out.print(row + " "); // print row numbers to side of map
+     this.console.print(row + " "); // print row numbers to side of map
       for( int column = 0; column < locations[row].length; column++){
         // set default indicators as blanks
         leftIndicator = " ";
@@ -134,24 +134,24 @@ public void displayMap() {
            leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
            rightIndicator = "<"; // same as above
         }
-       System.out.print("|"); // start map with a |
+       this.console.print("|"); // start map with a |
         if(locations[row][column].getScene() == null)
         {
              // No scene assigned here so use ?? for the symbol
-             System.out.print(leftIndicator + " ??" + rightIndicator);
+             this.console.print(leftIndicator + " ??" + rightIndicator);
         }
         else{
             String strSpace = "";
             if(locations[row][column].getScene().getSymbol().length()==2)
                 strSpace = " ";
-          System.out.print(strSpace + leftIndicator
+          this.console.print(strSpace + leftIndicator
              + locations[row][column].getScene().getSymbol()
              + rightIndicator);
         }
       }
-     System.out.println("|");
+     this.console.println("|");
     }
-    System.out.println("\nCurrent Location: " + map.getCurrentLocation().getScene().getDescription());
+    this.console.println("\nCurrent Location: " + map.getCurrentLocation().getScene().getDescription());
 
  }
     
@@ -164,25 +164,25 @@ public void displayMap() {
 //      //  Location [][] l = map.getLocations();
 //      
 //      Location[][] location = null;
-//       System.out.println("      THE QUEST  ");
-//        System.out.println("    1   2   3   4   5");
+//       this.console.println("      THE QUEST  ");
+//        this.console.println("    1   2   3   4   5");
 //         for(int i  = 0; i < 6; i++)
 //        {   
-//            System.out.println("-----------------------");
-//            System.out.print(i + 1 + "| ");
+//            this.console.println("-----------------------");
+//            this.console.print(i + 1 + "| ");
 //            for (int j = 0; j < 5; j++){
 //                if(i == 5 && j== 0){
-//                System.out.print(" S |");
+//                this.console.print(" S |");
 //                }
 //                else
 //                {
-//                     System.out.print(" " + location[i][j] + " ");
+//                     this.console.print(" " + location[i][j] + " ");
 //                }
 //            }
-//            System.out.println();
+//            this.console.println();
 //            
 //        }
-//          System.out.println("-----------------------");
+//          this.console.println("-----------------------");
 //      
 //    }
 
@@ -204,14 +204,14 @@ private void getActor() {
         if (searchActor.length()>2){
             Actor actor = GameControl.searchForActor(searchActor);
             if(actor != null){
-                System.out.println("Actor: " + actor.getName()+" - " + actor.getDescription());
+                this.console.println("Actor: " + actor.getName()+" - " + actor.getDescription());
             }
             else{
-                System.out.println("Actor not found.");
+                this.console.println("Actor not found.");
             }
         }
         else{
-            System.out.println("Invalid input");
+            this.console.println("Invalid input");
         }
             this.promptMessage = savePrompt;
         

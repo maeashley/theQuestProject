@@ -55,55 +55,55 @@ public class HelpMenuView extends View {
                 
 
             default:
-                System.out.println("\n***Invalid selection *** Try again");
+                this.console.println("\n***Invalid selection *** Try again");
                 break;
         }
         return false;
     }
 
     private void goals() {
-       System.out.println("The goal of the game is to answer all of the riddles "
+      this.console.println("The goal of the game is to answer all of the riddles "
                + "and challenges correctly with the highest amount of tokens "
                + "still available in your backpack.");
     }
 
     private void moves() {
-       System.out.println("You can move left and from building to building but "
+       this.console.println("You can move left and from building to building but "
                + "you cannot move up and down through the levels without "
                + "having bypassed the riddle that was given to you in that scene");
     }
 
     private void tokens() {
-       System.out.println("Tokens reference the amount of reward you have "
+       this.console.println("Tokens reference the amount of reward you have "
                + "earned from the levels you have passed throughout the game. "
                + "You can find your tokens by going to a current scene.");
     }
 
     private void map() {
-        System.out.println("      THE QUEST  ");
-        System.out.println("    1   2   3   4   5");
+        this.console.println("      THE QUEST  ");
+        this.console.println("    1   2   3   4   5");
          for(int i  = 0; i < 6; i++)
         {   
-            System.out.println("-----------------------");
-            System.out.print(i + 1 + "| ");
+            this.console.println("-----------------------");
+            this.console.print(i + 1 + "| ");
             for (int j = 0; j < 5; j++){
                 if(i == 5 && j== 0){
-                System.out.print(" S |");
+                this.console.print(" S |");
                 }
                 else
                 {
-                     System.out.print(" X |");
+                     this.console.print(" X |");
                 }
             }
-            System.out.println();
+            this.console.println();
             
         }
-          System.out.println("-----------------------");
+          this.console.println("-----------------------");
       
     }
 
     private void backpack() {
-       System.out.println("In your Backpack, you have three things: Tokens, "
+       this.console.println("In your Backpack, you have three things: Tokens, "
                + " Hints, and Guesses. Each is stored here and can be retrieved "
                + "when answering a riddle or challenge." );
     }

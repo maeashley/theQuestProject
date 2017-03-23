@@ -21,7 +21,7 @@ public class ByuiCit260QuestGameModel {
         startGame.setNoPeople(2);
         
         String start= startGame.toString();
-        System.out.println(start);
+        this.console.println(start);
     }
 
 }

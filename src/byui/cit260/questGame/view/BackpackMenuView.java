@@ -45,30 +45,30 @@ public class BackpackMenuView extends View {
                 break;
           
             default:
-                System.out.println("\n***Invalid selection *** Try again");
+                this.console.println("\n***Invalid selection *** Try again");
                 break;
               
         }
         return false;
     }
        private void hints() {
-        System.out.println("You have 3 hints.");
+        this.console.println("You have 3 hints.");
     }
 
     private void guesses() {
-        System.out.println("You have 2 guesses.");
+        this.console.println("You have 2 guesses.");
     }
 
     private void tokens() {
-        System.out.println("You do not have any tokens.");
+        this.console.println("You do not have any tokens.");
 }
 
     private void credits() {
        
        
-       System.out.print("Credits Earned: ");
+       this.console.print("Credits Earned: ");
        
-       System.out.print("Credits Still needed: ");
+       this.console.print("Credits Still needed: ");
 
     }
     

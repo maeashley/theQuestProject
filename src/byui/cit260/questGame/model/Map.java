@@ -61,12 +61,12 @@ public class Map implements Serializable {
        
     }
     
+    
     public Map(int floor, int building)
     {
         
         if (floor < 1 || building < 1)
         {
-            System.out.println("The Number of Buldings and Floors myst be > 0");
             return;
         }
         this.buildingCount = building;
