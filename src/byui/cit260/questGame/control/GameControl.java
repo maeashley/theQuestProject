@@ -13,6 +13,8 @@ import byui.cit260.questGame.model.Game;
 import byui.cit260.questGame.model.Map;
 import byui.cit260.questGame.model.Player;
 import byui.cit260.questGame.model.Scene;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import thequest.TheQuest;
 
 /**
@@ -72,6 +74,19 @@ public class GameControl {
         }
         return null;
     }   
+
+    public static void saveGame(Game currentGame, String filepath) 
+        throws GameControlException{
+        try( FileOutputStream fops = new FileOutputStream(filepath)){
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(currentGame);
+        } catch (Exception e){
+            throw new GameControlException(e.getMessage());
+        }
+    
+ 
+    }
     
     
     
