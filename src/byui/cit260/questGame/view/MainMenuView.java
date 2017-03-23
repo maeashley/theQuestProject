@@ -69,7 +69,14 @@ public class MainMenuView extends View {
         this.console.println("\n\nEnter the file Path for the file where the Game"
                 + " is saved.");
 
-        String filePath = this.getInput();
+        String filePath = "";
+        try{
+            filePath = keyboard.readLine();
+        }
+        catch(Exception ex){
+            ErrorView.display(this.getClass().getName(),
+                    "Error Retrieving game from file: '" + filePath + "'");
+        }
 
         try {
             GameControl.getSavedGame(filePath);
@@ -86,7 +93,14 @@ public class MainMenuView extends View {
         this.console.println("\n\nEnter the file path for file where the game"
                 + "is to be saved");
 
-        String filePath = this.getInput();
+        String filePath = "";
+        try{
+            filePath = keyboard.readLine();
+        }
+        catch(Exception ex){
+            ErrorView.display(this.getClass().getName(),
+                    "Error Retrieving game from file: '" + filePath + "'");
+        }
 
         try {
             GameControl.saveGame(TheQuest.getCurrentGame(), filePath);

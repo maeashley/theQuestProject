@@ -86,6 +86,8 @@ public class MapControl {
         return map;
     }
 
+    
+    //  INCLUDE CREATE QUESTIONLIST FOR EACH CLASSS
     private static Scene[] createScenes() {
         Scene[] scenes = new Scene[SceneType.values().length];
 
