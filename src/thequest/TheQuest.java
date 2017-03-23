@@ -68,8 +68,10 @@ public class TheQuest {
 
         }
         finally {
+           
             TheQuest.inFile.close();
             TheQuest.outFile.close();
+            
         }
     }
 
