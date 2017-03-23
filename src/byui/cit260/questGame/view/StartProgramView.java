@@ -36,7 +36,7 @@ public class StartProgramView{
     
    
     public void banner(){
-        System.out.println("████████╗██╗  ██╗███████╗     ██████╗ ██╗   ██╗███████╗███████╗████████╗\n" +
+        this.console.println("████████╗██╗  ██╗███████╗     ██████╗ ██╗   ██╗███████╗███████╗████████╗\n" +
 "╚══██╔══╝██║  ██║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔════╝╚══██╔══╝\n" +
 "   ██║   ███████║█████╗      ██║   ██║██║   ██║█████╗  ███████╗   ██║   \n" +
 "   ██║   ██╔══██║██╔══╝      ██║▄▄ ██║██║   ██║██╔══╝  ╚════██║   ██║   \n" +
@@ -45,7 +45,7 @@ public class StartProgramView{
 "                                                                        ");
         
         
-        System.out.println("This text based game is a quest of knowledge and endurance.\n"
+        this.console.println("This text based game is a quest of knowledge and endurance.\n"
                 + "The goal of the game is to answer all riddles or puzzles correctly "
                 + "with the most tokens possible. \n"
                 + "The riddles, challenges, and puzzles become more difficult "
@@ -60,19 +60,19 @@ public class StartProgramView{
         boolean valid = false;
         
         while (!valid){
-            System.out.println("\n" + prompt);
+            this.console.println("\n" + prompt);
             try
             {
                 value = keyboard.readLine();
             }
             catch(Exception ex)
             {
-                System.out.println("Invalid Input!");
+                this.console.println("Invalid Input!");
             }
             value = value.trim();
             valid = true;
             if (value.length()<2){
-            System.out.println("\nInvalid players name: " + value +
+            this.console.println("\nInvalid players name: " + value +
                     " \nThe name must be greater than one character in length");
             valid = false;
             
@@ -105,7 +105,7 @@ public class StartProgramView{
 }
 
     private void displayNextView(Player player) {
-        System.out.println("\n========================="
+        this.console.println("\n========================="
                 + "\n Welcome to the game " + player.getName()
         + "\n We hope you have a lot of fun!"
         +"\n===============================");

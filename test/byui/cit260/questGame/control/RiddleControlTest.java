@@ -23,7 +23,7 @@ public class RiddleControlTest {
     /*
     @Test
     public void testCalcTemperature() {
-        System.out.println("calcTemperature");
+        this.console.println("calcTemperature");
         float celsius = 45F;
         QuestionControl instance = new QuestionControl();
         float expResult = 113F;
@@ -67,7 +67,7 @@ public class RiddleControlTest {
     /*
     @Test
     public void testCalcDensity() {
-        System.out.println("calcDensity");
+        this.console.println("calcDensity");
         float mass = 25F;
         float volume = 1.5F;
         QuestionControl instance = new QuestionControl();
@@ -119,7 +119,7 @@ public class RiddleControlTest {
     /*
     @Test
     public void testCalcSide() {
-        System.out.println("calcSide");
+        this.console.println("calcSide");
         float side1 = 3F;
         float side2 = 4F;
         QuestionControl instance = new QuestionControl();

@@ -51,7 +51,7 @@ public abstract class View implements ViewInterface {
         String value = null;
 
         while (!valid) {
-            System.out.println("\n" + this.promptMessage);
+            this.console.println("\n" + this.promptMessage);
 
             try
             {
@@ -64,7 +64,7 @@ public abstract class View implements ViewInterface {
             value = value.trim();
 
             if (value.length() < 1) {
-                System.out.println("\n*** You must enter a value ***");
+                this.console.println("\n*** You must enter a value ***");
                 continue;
             }
             break;
@@ -81,7 +81,7 @@ public abstract class View implements ViewInterface {
         
         while (number == 0)
         {
-            System.out.println(prompt);
+            this.console.println(prompt);
             try
             {
                 value = keyboard.readLine();

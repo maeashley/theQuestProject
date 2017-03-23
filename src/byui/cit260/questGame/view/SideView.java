@@ -43,7 +43,7 @@
 //        while (!valid) {
 //            while (!valid) {
 //
-//                System.out.println(this.prompt1);
+//                this.console.println(this.prompt1);
 //                
 //                try
 //                {
@@ -59,7 +59,7 @@
 //                valid = true;
 //
 //                if (value1 < 0 || value1 > 50) {
-//                    System.out.println("Please enter a number between 0 - 50");
+//                    this.console.println("Please enter a number between 0 - 50");
 //                    valid = false;
 //                }
 //
@@ -68,11 +68,11 @@
 //
 //            while (!valid) {
 //
-//                System.out.println(this.prompt2);
+//                this.console.println(this.prompt2);
 //                value2 = keyboard.nextInt();
 //                valid = true;
 //                if (value2 < 0 || value2 > 50) {
-//                    System.out.println("Please enter a number between 0 - 50");
+//                    this.console.println("Please enter a number between 0 - 50");
 //                    valid = false;
 //                }
 //            }
@@ -81,9 +81,9 @@
 //
 //            /*float side3 = r1.calcSide(value1, value2);
 //            if (side3 < 0) {
-//                System.out.println("Please enter valid values");
+//                this.console.println("Please enter valid values");
 //            } else {
-//                System.out.println("Side 3: " + side3);
+//                this.console.println("Side 3: " + side3);
 //                valid = true;
 //            }
 //*/

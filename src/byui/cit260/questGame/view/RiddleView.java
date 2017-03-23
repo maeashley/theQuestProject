@@ -31,11 +31,11 @@ public class RiddleView extends View {
             throw new QuestionControlException("\nInvalid value: value cannot be a negative integer");
 
         } else if (massValue > 5000) {
-            System.out.println("You have entered an invalid number."
+            this.console.println("You have entered an invalid number."
                     + "Do not use values larger than 5000.");
             return false;
         } else {
-            System.out.println("You have entered a valid mass.");
+            this.console.println("You have entered a valid mass.");
             valid = true;
         }
         
