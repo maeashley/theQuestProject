@@ -12,7 +12,7 @@ import byui.cit260.questGame.exceptions.QuestionControlException;
 public class RiddleView extends View {
 
     public RiddleView() {
-        super();
+        super("You need to create a function that calls each question.");
 
     }
 

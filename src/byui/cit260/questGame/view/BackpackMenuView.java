@@ -5,10 +5,11 @@
  */
 package byui.cit260.questGame.view;
 
+import byui.cit260.questGame.exceptions.BackpackControlException;
 import byui.cit260.questGame.model.Actor;
-import java.util.Scanner;
-import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+
 
 /**
  *
@@ -76,25 +77,23 @@ public class BackpackMenuView extends View {
     }
     
     /*
-    public void printList(Actor actor, String filePath){
+    public void printList(Actor actor, String filePath) throws BackpackControlException{
            
-        try (PrintWriter = new PrintWriter(HelpMenuView)){
+        try (PrintWriter = new PrintWriter(filePath)){
             this.console.println("\n\n     List of Actors         ");
             this.console.printf("%n%-10s%20s%10s", "Name", "Description",
                                 "Location");
             this.console.printf("%n%-10s%20s%10s", "----", "-----------",
                                 "--------");
-        for
-         (Actor actor : actor){
-            this.consoleprintf("", actor.getName()
+        for(Actor : actor){
+            this.console.printf("", actor.getName()
                                  , actor.getDescription()
                                  , actor.getLocation());
-        }catch (IOException ex){
-            this.console.println("I/O Error: " + ex.getMessage());
+            }
         }
             this.console.println("Print successful.");
-    }
-        */
+    
+    }*/
     }
     
     
