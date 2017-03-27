@@ -311,8 +311,7 @@ private void getActor() {
         } catch (Exception e){
             ErrorView.display("GameMenuView",
                     "Error writing to file: '" + filePath + "'");
-            
-            
+
             return false;
         }
         
