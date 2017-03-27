@@ -19,7 +19,9 @@ public class Map implements Serializable {
     private int currentFloor;
     private int currentScene;
     private Location currentLocation;
-
+    private Location[][] locations; 
+    
+    
     public int getCurrentFloor() {
         return currentFloor;
     }
@@ -54,7 +56,7 @@ public class Map implements Serializable {
     }
     
 
-    private Location[][] locations;
+    
 
     public Map() {
         
