@@ -5,7 +5,11 @@
  */
 package byui.cit260.questGame.view;
 
+import byui.cit260.questGame.control.GameControl;
 import java.util.Scanner;
+import thequest.TheQuest;
+import java.io.PrintWriter;
+import java.io.BufferedReader;
 
 /**
  *
@@ -22,6 +26,7 @@ public class HelpMenuView extends View {
                 + "T – Tokens you have\n"
                 + "X – Map\n"
                 + "B – Backpack contents\n"
+                + "P - Print a report"
                 + "Q – return to previous menu"
                 + "\nEnter the option: ";
         
@@ -51,6 +56,10 @@ public class HelpMenuView extends View {
                 
             case "B":
                 this.backpack();
+                break;
+                
+            case "P":
+                this.printReport();
                 break;
                 
 
@@ -108,4 +117,24 @@ public class HelpMenuView extends View {
                + "when answering a riddle or challenge." );
     }
 
+    private void printReport() {
+        this.console.println("\n\nEnter the file path for file where the game"
+                + "is to be saved");
+
+        String filePath = "";
+        try{
+            filePath = keyboard.readLine();
+        }
+        catch(Exception ex){
+            ErrorView.display(this.getClass().getName(),
+                    "Error Retrieving game from file: '" + filePath + "'");
+    
+        }
+        
+        try {
+           // BackpackMenuView.printList(filePath)
+        } catch (Exception ex) {
+            ErrorView.display("HelpMenuView", ex.getMessage());
+        }
+    }
 }
