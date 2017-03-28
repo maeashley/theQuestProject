@@ -1,0 +1,36 @@
+
+
+     List of Actors         
+
+Name               Description  Location
+----               -----------  --------
+Ron                 Religion 11,1
+Rob                  Science 12,1
+Jen              Mathematics 13,1
+Shane             Technology 14,1
+Kristi                 Music 15,1
+Curtis              Religion 21,2
+Joseph               Science 22,2
+Kent             Mathematics 23,2
+Blaine            Technology 24,2
+Rebecca                Music 25,2
+Ross                Religion 31,3
+Gary                 Science 32,3
+Dave             Mathematics 33,3
+Michael           Technology 34,3
+Nadine                 Music 35,3
+Kristy              Religion 41,4
+Lanning              Science 42,4
+Larry            Mathematics 43,4
+Lee               Technology 44,4
+David                  Music 45,4
+Chris               Religion 51,5
+Eric                 Science 52,5
+Paul             Mathematics 53,5
+Bradley           Technology 54,5
+David                  Music 55,5
+Rex Butterfield          Religion 61,6
+Steve                Science 62,6
+Jackie           Mathematics 63,6
+Rex Barzee        Technology 64,6
+Diane                  Music 65,6
