@@ -8,12 +8,18 @@ package byui.cit260.questGame.view;
 import byui.cit260.questGame.control.BackpackControl;
 import byui.cit260.questGame.control.GameControl;
 import byui.cit260.questGame.control.MapControl;
+import byui.cit260.questGame.exceptions.GameControlException;
 import byui.cit260.questGame.exceptions.MapControlException;
 import byui.cit260.questGame.model.Actor;
 import byui.cit260.questGame.model.Backpack;
 import byui.cit260.questGame.model.Game;
 import byui.cit260.questGame.model.Location;
 import byui.cit260.questGame.model.Map;
+import java.io.DataOutputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
+import java.nio.file.FileSystemException;
 import java.util.Scanner;
 import thequest.TheQuest;
 
@@ -33,6 +39,7 @@ public class GameMenuView extends View {
                 + "L – Current Location\n"
                 + "R - View a Riddle\n"
                 + "H - Help \n"
+                + "P - Print Report\n"
                 + "Q – return to previous menu\n"
                 + "Enter the option: ");
         
@@ -71,6 +78,12 @@ public class GameMenuView extends View {
             case "M":
                 this.movePlayer();
                 break;
+            
+            case "P":
+                this.report();
+                break;
+                
+                
             default:
                 this.console.println("\n***Invalid selection *** Try again");
                 break;
@@ -243,5 +256,66 @@ private void getActor() {
         }
          displayMap();
     }
+
+    private void report() {
+        
+        this.console.println("Enter the Output File Location: ");
+        String filePath = "";
+        try{
+            filePath = keyboard.readLine();
+        }
+        catch(Exception ex){
+            ErrorView.display(this.getClass().getName(),
+                    "Error writing to file: '" + filePath + "'");
+        }
+
+        try {
+            if(this.printReport(TheQuest.getCurrentGame(), filePath)){
+                this.console.println("File Written!");
+            }
+            else{
+                this.console.println("Report Writting Unsuccessful");
+            }
+        } 
+        catch (Exception ex) {
+            ErrorView.display("GameMenuView", ex.getMessage());
+        }
     
+    
+    }
+    
+
+
+
+  public static boolean printReport(Game currentGame, String filePath)
+  throws FileSystemException{
+        
+        String report = "";
+      
+        Map map = currentGame.getMap();
+        Location[][] locations = map.getLocations();
+        
+        for (int i = 0; i < map.getFloorCount(); i++)
+        {
+            for (int j = 0; j < map.getBuildingCount(); j++)
+            {
+               report += locations[i][j].getScene().getDescription() + "\n";
+               
+            }
+        }
+        
+        try(PrintWriter out = new PrintWriter(filePath)){
+            
+            out.println(report);            
+            out.close();
+        } catch (Exception e){
+            ErrorView.display("GameMenuView",
+                    "Error writing to file: '" + filePath + "'");
+
+            return false;
+        }
+        
+        return true;
+    }
+   
 }
