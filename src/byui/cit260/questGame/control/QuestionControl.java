@@ -41,6 +41,7 @@ public class QuestionControl {
                     = new BufferedReader(fileReader);
 
             for (int count = 0; count < 10; count++) {
+                question[count] = new Question(); //needs to create a new question each time
                 line = bufferedReader.readLine();
                 question[count].setText(line);
 
