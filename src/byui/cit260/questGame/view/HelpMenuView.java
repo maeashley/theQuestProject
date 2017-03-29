@@ -118,8 +118,8 @@ public class HelpMenuView extends View {
     }
 
     private void printReport() {
-        this.console.println("\n\nEnter the file path for file where the game"
-                + "is to be saved");
+        this.console.println("\n\nEnter the file path for file where the actor report"
+                + " is to be saved");
 
         String filePath = "";
         try{

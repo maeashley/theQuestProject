@@ -21,6 +21,8 @@ public class RiddleView extends View {
         ///
         return true;
     }
+    
+    
 
     public boolean getMass()
             throws QuestionControlException {

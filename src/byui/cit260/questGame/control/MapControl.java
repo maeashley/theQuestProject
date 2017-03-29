@@ -202,6 +202,7 @@ public class MapControl {
         scenes[SceneType.mathematics5.ordinal()] = scene;
 
         //SCENE 13
+        questions = QuestionControl.createScienceQuestionList();
         scene = new Scene();
         scene.setSymbol("SC1");
         scene.setDescription("Welcome to brother Coleman's science class.");
@@ -256,6 +257,7 @@ public class MapControl {
         scenes[SceneType.science5.ordinal()] = scene;
 
         //SCENE 19
+        questions = QuestionControl.createTechnologyQuestionList();
         scene = new Scene();
         scene.setSymbol("T1");
         scene.setDescription("Welcome to Brother Thompson's technology class.");
@@ -310,6 +312,7 @@ public class MapControl {
         scenes[SceneType.technology5.ordinal()] = scene;
 
         //SCENE 25
+        questions = QuestionControl.createMusicQuestionList();
         scene = new Scene();
         scene.setSymbol("MU1");
         scene.setDescription("Welcome to Sister Ballif's music class.");

@@ -67,14 +67,14 @@ public class QuestionControl {
 
     public static Question[] createReligiousQuestionList() {
         Question[] religion = new Question[10];
-       // readFile("/Users/Harry/Documents/NetBeansProject/theQuestProject/src/byui/cit260/questGame/control/religion.txt", religion);
-
+        //readFile("/Users/Harry/Documents/NetBeansProject/theQuestProject/src/byui/cit260/questGame/control/religion.txt", religion);
+        readFile("religion.txt", religion);
         return religion;
     }
 
     public static Question[] createMathQuestionList() {
         Question[] math = new Question[10];
-        //readFile("mathematics.txt", math);
+        readFile("mathematics.txt", math);
 
         return math;
     }
@@ -84,7 +84,7 @@ public class QuestionControl {
         Question[] music = new Question[10];
         
         //System.out.println("Opeing Music.txt");
-       // readFile("music.txt", music);
+        readFile("music.txt", music);
 
         return music;
     }
@@ -92,7 +92,7 @@ public class QuestionControl {
     public static Question[] createScienceQuestionList() {
 
         Question[] science = new Question[10];
-        //readFile("science.txt", science);
+        readFile("science.txt", science);
 
         return science;
     }
@@ -100,7 +100,7 @@ public class QuestionControl {
     public static Question[] createTechnologyQuestionList() {
 
         Question[] tech = new Question[10];
-        //readFile("technology.txt", tech);
+        readFile("technology.txt", tech);
 
         return tech;
     }

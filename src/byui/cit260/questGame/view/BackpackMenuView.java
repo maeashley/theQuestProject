@@ -85,14 +85,14 @@ public class BackpackMenuView extends View {
 
         try (PrintWriter printWriter = new PrintWriter(filePath)) {
             printWriter.println("\n\n     List of Actors         ");
-            printWriter.printf("%n%-10s%20s%10s", "Name", "Description",
+            printWriter.printf("%n%-18s%20s%10s", "Name", "Description",
                     "Location");
-            printWriter.printf("%n%-10s%20s%10s", "----", "-----------",
+            printWriter.printf("%n%-18s%20s%10s", "----", "-----------",
                     "--------");
             for (Actor actor : Actor.values()) {
 
                 Location location = actor.getLocation();
-                printWriter.printf("%n%-10s%20s %d,%d", actor.getName(),
+                printWriter.printf("%n%-18s%20s    %d,%d", actor.getName(),
                          actor.getDescription(),
                          location.getBuilding(),
                          location.getFloor());
