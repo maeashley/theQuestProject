@@ -27,5 +27,17 @@ public class Question {
         this.reward = reward;
     }
 
+    public String getText() {
+        return text;
+    }
+
+    public String getCorrectAnswer() {
+        return correctAnswer;
+    }
+
+    public int getReward() {
+        return reward;
+    }
+
     
 }

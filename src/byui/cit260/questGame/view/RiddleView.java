@@ -8,20 +8,88 @@ package byui.cit260.questGame.view;
 import byui.cit260.questGame.control.QuestionControl;
 import java.util.Scanner;
 import byui.cit260.questGame.exceptions.QuestionControlException;
+import byui.cit260.questGame.model.Location;
+import byui.cit260.questGame.control.MapControl;
+import byui.cit260.questGame.model.Game;
+import thequest.TheQuest;
 
 public class RiddleView extends View {
 
+    private Location location;
     public RiddleView() {
-        super("You need to create a function that calls each question.");
-
+        super("\n-----------------"
+            + "\nV - View your corresponding riddle and the amount "
+                + "\n of tokens it is worth"
+            + "\nQ - Return to previous menu"
+            + "\n-----------------"
+            + "Please enter an option: ");
+        location = null;
     }
+    
+    public RiddleView(Location currentLocation)
+    {
+       
+     location = currentLocation;
+       
+    }
+    
+
+    
 
     @Override
     public boolean doAction(String value) {
-        ///
-        return true;
+        switch(value){
+            case "V":
+            this.askQuestion();
+            break;
+            
+            
+                }return false;
     }
     
+    
+    
+    
+    public void askQuestion(){
+        Game game = TheQuest.getCurrentGame();
+
+            
+        if(this.location == null){
+            return;
+        }    
+       else
+        {
+               //display this
+          this.console.println(location.getScene().getQuestion().getText());
+            int tokens = location.getScene().getQuestion().getReward();
+            //get their response and compare to .getCorrectAnswer()
+                String value = this.getInput().toUpperCase();
+                this.console.println(value);
+                
+             if(value == location.getScene().getQuestion().getCorrectAnswer()){
+                       game.getBackpack().setTokens(tokens + game.getBackpack().getToken());
+                  
+                      this.console.println("Correct! You have recieved "
+                              + tokens + " tokens!"); 
+                     
+             }          
+                  else{
+                      this.console.println("That is incorrect. Try again!");
+                  }    
+            }
+        }
+      
+
+
+
+
+
+
+
+
+
+
+
     
 
     public boolean getMass()
@@ -45,5 +113,16 @@ public class RiddleView extends View {
 
     }
 
+    private void newRiddle() {
+        this.console.println("This will display the associated riddle and"
+                + "the amount of tokens it is worth.");
+        /*
+        getCurrentLocation
+        */
+        
+        
+    }
+
+    
 
 }
