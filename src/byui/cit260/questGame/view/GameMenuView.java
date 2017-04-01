@@ -204,7 +204,10 @@ public void displayMap() {
         GameControl.createNewGame(TheQuest.getPlayer());
     }
     private void riddle() {
-        RiddleView riddle = new RiddleView();
+        Game game = TheQuest.getCurrentGame(); // retreive the game
+        Location currentLocation = game.getMap().getCurrentLocation(); // retreive the map from game
+        //do I have to do something with the scene here??
+        RiddleView riddle = new RiddleView(currentLocation);
         riddle.display();
     }
     

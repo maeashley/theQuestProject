@@ -208,6 +208,7 @@ public class MapControl {
         
         questions = QuestionControl.createScienceQuestionList();
         //SCENE 13
+        questions = QuestionControl.createScienceQuestionList();
         scene = new Scene();
         scene.setSymbol("SC1");
         scene.setDescription("Welcome to brother Coleman's science class.");
@@ -264,6 +265,7 @@ public class MapControl {
         
         questions = QuestionControl.createTechnologyQuestionList();
         //SCENE 19
+        questions = QuestionControl.createTechnologyQuestionList();
         scene = new Scene();
         scene.setSymbol("T1");
         scene.setDescription("Welcome to Brother Thompson's technology class.");
@@ -321,6 +323,7 @@ public class MapControl {
         questions = QuestionControl.createMusicQuestionList();
         
         //SCENE 25
+        questions = QuestionControl.createMusicQuestionList();
         scene = new Scene();
         scene.setSymbol("MU1");
         scene.setDescription("Welcome to Sister Ballif's music class.");

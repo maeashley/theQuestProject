@@ -21,14 +21,14 @@ public class HelpMenuView extends View {
     //private String promptMessage;
 
     public HelpMenuView() {
-        this.menu = "G – Goal of the game\n"
+        super("G – Goal of the game\n"
                 + "M - How to move   \n"
                 + "T – Tokens you have\n"
                 + "X – Map\n"
                 + "B – Backpack contents\n"
-                + "P - Print a report"
+                + "P - Print a report\n"
                 + "Q – return to previous menu"
-                + "\nEnter the option: ";
+                + "\nEnter the option: ");
         
     }
 
@@ -118,12 +118,14 @@ public class HelpMenuView extends View {
     }
 
     private void printReport() {
-        this.console.println("\n\nEnter the file path for file where the game"
-                + "is to be saved");
+        this.console.println("\n\nEnter the file path for file where the actor report"
+                + " is to be saved");
 
         String filePath = "";
         try{
             filePath = keyboard.readLine();
+            BackpackMenuView report = new BackpackMenuView();
+            report.printList(filePath);
         }
         catch(Exception ex){
             ErrorView.display(this.getClass().getName(),
