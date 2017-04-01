@@ -148,6 +148,9 @@ public class MapControl {
 
         //SCENE 7
         questions = QuestionControl.createMathQuestionList();
+        
+        
+        
         scene = new Scene();
         scene.setSymbol("MA1");
         scene.setDescription("Welcome to Sister Baxter's math class.");
@@ -201,6 +204,9 @@ public class MapControl {
         scene.setActor(Actor.Jackie_Nygaard);
         scenes[SceneType.mathematics5.ordinal()] = scene;
 
+        
+        
+        questions = QuestionControl.createScienceQuestionList();
         //SCENE 13
         scene = new Scene();
         scene.setSymbol("SC1");
@@ -255,6 +261,8 @@ public class MapControl {
         scene.setActor(Actor.Steve_Christenson);
         scenes[SceneType.science5.ordinal()] = scene;
 
+        
+        questions = QuestionControl.createTechnologyQuestionList();
         //SCENE 19
         scene = new Scene();
         scene.setSymbol("T1");
@@ -309,6 +317,9 @@ public class MapControl {
         scene.setActor(Actor.Rex_Barzee);
         scenes[SceneType.technology5.ordinal()] = scene;
 
+        
+        questions = QuestionControl.createMusicQuestionList();
+        
         //SCENE 25
         scene = new Scene();
         scene.setSymbol("MU1");
