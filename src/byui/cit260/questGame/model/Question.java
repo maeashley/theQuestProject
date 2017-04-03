@@ -15,6 +15,12 @@ public class Question {
     private String correctAnswer;
     private int reward;
     
+    
+    public Question(){
+        text = "";
+        correctAnswer = "";
+        reward = 0;
+    }
     public void setText(String text) {
         this.text = text;
     }
