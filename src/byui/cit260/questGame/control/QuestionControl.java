@@ -26,11 +26,18 @@ public class QuestionControl {
 
     public static Question[] createReligiousQuestionList() {
         Question[] religion = new Question[10];
-
+        
+        for(int i = 0; i < 10 ; i++)
+        {
+            religion[i] = new Question();
+        }
+        
         religion[0].setText("What is the first book in the Book of Mormon?");
         religion[0].setCorrectAnswer("Nephi");
         religion[0].setReward(1);
 
+        
+        
         religion[1].setText("How many years were Nephi andhis family in the"
                 + " wilderness?");
         religion[1].setCorrectAnswer("8");
@@ -77,7 +84,10 @@ public class QuestionControl {
 
     public static Question[] createMathQuestionList() {
         Question[] math = new Question[10];
-
+        for(int i = 0; i < 10 ; i++)
+        {
+            math[i] = new Question();
+        }
         math[0].setText("20 % of 2 is equal to");
         math[0].setCorrectAnswer("0.4");
         math[0].setReward(1);
@@ -146,7 +156,10 @@ public class QuestionControl {
     public static Question[] createMusicQuestionList() {
 
         Question[] music = new Question[10];
-
+        for(int i = 0; i < 10 ; i++)
+        {
+            music[i] = new Question();
+        }
         music[0].setText("The live album Beauty and the Beat featured pianist "
                 + "George Shearring and which singer?");
         music[0].setCorrectAnswer("Peggy Lee");
@@ -197,6 +210,10 @@ public class QuestionControl {
     public static Question[] createScienceQuestionList() {
 
         Question[] science = new Question[10];
+        for(int i = 0; i < 10 ; i++)
+        {
+            science[i] = new Question();
+        }
         science[0].setText("Optical Phenomenon in the fringe pattern of CD is");
         science[0].setCorrectAnswer("Interference");
         science[0].setReward(2);
@@ -245,6 +262,10 @@ public class QuestionControl {
     public static Question[] createTechnologyQuestionList() {
 
         Question[] tech = new Question[10];
+        for(int i = 0; i < 10 ; i++)
+        {
+            tech[i] = new Question();
+        }
         tech[0].setText("The fathers of the Internet is ");
         tech[0].setCorrectAnswer("Vint Cerf");
         tech[0].setReward(1);

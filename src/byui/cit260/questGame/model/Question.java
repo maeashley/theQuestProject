@@ -17,9 +17,9 @@ public class Question {
     
     
     public Question(){
-        text = "";
-        correctAnswer = "";
-        reward = 0;
+        this.text = "";
+        this.correctAnswer = "";
+        this.reward = 0;
     }
     public void setText(String text) {
         this.text = text;
