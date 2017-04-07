@@ -41,7 +41,6 @@ public abstract class View implements ViewInterface {
 
             done = this.doAction(value);
         } while (!done);
-
     }
 
     @Override

@@ -23,7 +23,7 @@ public class QuestionControl {
     public QuestionControl() {
 
     }
-
+    
     public static Question[] createReligiousQuestionList() {
         Question[] religion = new Question[10];
         

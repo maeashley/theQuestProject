@@ -19,7 +19,7 @@ public class RiddleView extends View {
     public RiddleView() {
         super("\n-----------------"
             + "\nV - View your corresponding riddle and the amount "
-                + "\n of tokens it is worth"
+            + "\n of tokens it is worth"
             + "\nQ - Return to previous menu"
             + "\n-----------------"
             + "Please enter an option: ");
@@ -27,10 +27,8 @@ public class RiddleView extends View {
     }
     
     public RiddleView(Location currentLocation)
-    {
-       
-     location = currentLocation;
-       
+    { 
+        this.location = currentLocation;  
     }
     
 
@@ -52,7 +50,6 @@ public class RiddleView extends View {
     
     public void askQuestion(){
         Game game = TheQuest.getCurrentGame();
-
             
         if(this.location == null){
             return;
